@@ -1,0 +1,932 @@
+rank#1
+Deis1k
+https://lolchess.gg/profile/euw/deis1k
+Game: 1
+placement #3
+4 Swiftshot
+4 Bruiser
+1 Guild
+3 Ragewing
+2 Tempest
+ 
+Game: 2
+placement #5
+4 Assassin
+2 Guardian
+1 Guild
+3 Shimmerscale
+2 Tempest
+2 Whispers
+ 
+Game: 3
+placement #2
+7 Mage
+1 Spell Thief
+2 Evoker
+1 Guild
+2 Mystic
+2 Trainer
+ 
+Game: 4
+placement #3
+6 Ragewing
+2 Assassin
+2 Bruiser
+2 Guild
+2 Swiftshot
+2 Tempest
+ 
+Game: 5
+placement #6
+1 Bard
+6 Jade
+3 Dragonmancer
+1 Guild
+2 Mystic
+3 Ragewing
+2 Shapeshifter
+ 
+Game: 6
+placement #2
+4 Swiftshot
+4 Bruiser
+2 Evoker
+1 Guild
+2 Revel
+2 Tempest
+ 
+Game: 7
+placement #1
+1 Starcaller
+6 Jade
+4 Shapeshifter
+2 Bruiser
+ 
+Game: 8
+placement #1
+1 Bard
+6 Ragewing
+2 Bruiser
+2 Guild
+2 Shapeshifter
+2 Swiftshot
+ 
+Game: 9
+placement #7
+6 Mirage
+2 Cavalier
+2 Guardian
+ 
+Game: 10
+placement #3
+1 Spell Thief
+5 Mage
+2 Bruiser
+2 Evoker
+2 Guild
+2 Mystic
+2 Trainer
+ 
+rank#2
+Cynarr
+https://lolchess.gg/profile/euw/cynarr
+Game: 1
+placement #1
+1 Bard
+6 Jade
+3 Dragonmancer
+1 Guild
+2 Mystic
+3 Ragewing
+3 Shapeshifter
+2 Swiftshot
+2 Tempest
+ 
+Game: 2
+placement #3
+1 Bard
+1 Spell Thief
+5 Mage
+3 Mystic
+2 Bruiser
+2 Guild
+2 Trainer
+ 
+Game: 3
+placement #2
+4 Cavalier
+3 Guild
+2 Mirage
+3 Ragewing
+2 Swiftshot
+ 
+Game: 4
+placement #1
+1 Bard
+1 Spell Thief
+4 Bruiser
+4 Tempest
+1 Guild
+3 Mage
+2 Whispers
+ 
+Game: 5
+placement #3
+1 Bard
+6 Bruiser
+4 Whispers
+1 Guild
+2 Tempest
+2 Warrior
+ 
+Game: 6
+placement #7
+6 Dragonmancer
+2 Bruiser
+3 Ragewing
+3 Shimmerscale
+2 Tempest
+2 Warrior
+ 
+Game: 7
+placement #1
+1 Spell Thief
+4 Bruiser
+5 Mage
+1 Guild
+2 Mystic
+2 Trainer
+ 
+Game: 8
+placement #5
+6 Jade
+3 Dragonmancer
+3 Ragewing
+2 Shapeshifter
+2 Swiftshot
+ 
+Game: 9
+placement #7
+2 Bruiser
+3 Dragonmancer
+3 Ragewing
+2 Swiftshot
+2 Tempest
+2 Warrior
+ 
+Game: 10
+placement #1
+6 Jade
+3 Dragonmancer
+2 Guardian
+2 Swiftshot
+2 Tempest
+ 
+rank#3
+AEG PasDeBol
+https://lolchess.gg/profile/euw/aegpasdebol
+Game: 1
+placement #7
+6 Dragonmancer
+3 Jade
+3 Ragewing
+3 Shapeshifter
+2 Warrior
+ 
+Game: 2
+placement #1
+1 Bard
+4 Cavalier
+1 Starcaller
+4 Guild
+2 Assassin
+2 Mirage
+ 
+Game: 3
+placement #2
+1 Starcaller
+7 Jade
+3 Dragonmancer
+2 Guardian
+2 Swiftshot
+2 Tempest
+ 
+Game: 4
+placement #4
+1 Bard
+1 Spell Thief
+4 Tempest
+2 Bruiser
+1 Guild
+3 Mage
+2 Mystic
+2 Trainer
+ 
+Game: 5
+placement #1
+3 Legend
+1 Spell Thief
+6 Tempest
+2 Bruiser
+3 Dragonmancer
+3 Ragewing
+3 Shimmerscale
+2 Swiftshot
+2 Warrior
+ 
+Game: 6
+placement #4
+1 Bard
+4 Scalescorn
+2 Assassin
+2 Bruiser
+1 Guild
+2 Tempest
+2 Warrior
+ 
+Game: 7
+placement #3
+4 Swiftshot
+3 Astral
+2 Bruiser
+1 Guild
+ 
+Game: 8
+placement #7
+1 Bard
+7 Mage
+1 Spell Thief
+2 Bruiser
+2 Guild
+2 Mystic
+ 
+Game: 9
+placement #1
+6 Ragewing
+4 Shapeshifter
+3 Dragonmancer
+3 Jade
+2 Swiftshot
+ 
+Game: 10
+placement #8
+4 Tempest
+2 Bruiser
+2 Evoker
+3 Mage
+2 Trainer
+ 
+rank#4
+SH1RCANE
+https://lolchess.gg/profile/euw/sh1rcane
+Game: 1
+placement #7
+4 Assassin
+4 Scalescorn
+4 Bruiser
+1 Guild
+2 Warrior
+ 
+Game: 2
+placement #3
+1 Bard
+6 Jade
+3 Dragonmancer
+2 Guardian
+1 Guild
+2 Mystic
+2 Swiftshot
+2 Tempest
+ 
+Game: 3
+placement #4
+1 Bard
+4 Guild
+2 Assassin
+2 Bruiser
+2 Cavalier
+3 Ragewing
+2 Swiftshot
+2 Whispers
+ 
+Game: 4
+placement #3
+1 Bard
+4 Guild
+6 Ragewing
+2 Cavalier
+2 Shapeshifter
+2 Swiftshot
+ 
+Game: 5
+placement #2
+2 Assassin
+2 Guardian
+1 Guild
+3 Ragewing
+3 Shimmerscale
+2 Swiftshot
+2 Warrior
+2 Whispers
+ 
+Game: 6
+placement #3
+1 Bard
+1 Starcaller
+6 Jade
+2 Assassin
+2 Bruiser
+2 Guild
+2 Mystic
+2 Whispers
+ 
+Game: 7
+placement #1
+1 Bard
+4 Cavalier
+7 Mirage
+2 Guardian
+2 Guild
+2 Mystic
+ 
+Game: 8
+placement #1
+1 Bard
+7 Mage
+1 Spell Thief
+3 Mystic
+4 Astral
+2 Evoker
+2 Guild
+2 Trainer
+ 
+Game: 9
+placement #3
+1 Bard
+3 Mystic
+2 Guild
+3 Ragewing
+3 Shimmerscale
+2 Swiftshot
+2 Warrior
+ 
+Game: 10
+placement #2
+6 Dragonmancer
+6 Jade
+2 Swiftshot
+ 
+rank#5
+Kuzma MAMBA
+https://lolchess.gg/profile/euw/kuzmamamba
+Game: 1
+placement #1
+6 Shapeshifter
+2 Assassin
+4 Ragewing
+2 Whispers
+ 
+Game: 2
+placement #2
+4 Guild
+2 Assassin
+2 Cavalier
+3 Ragewing
+2 Swiftshot
+2 Tempest
+ 
+Game: 3
+placement #2
+5 Assassin
+4 Bruiser
+1 Guild
+2 Scalescorn
+2 Tempest
+3 Warrior
+2 Whispers
+ 
+Game: 4
+placement #6
+4 Scalescorn
+4 Warrior
+2 Assassin
+2 Bruiser
+ 
+Game: 5
+placement #3
+4 Evoker
+4 Tempest
+2 Bruiser
+3 Mage
+2 Trainer
+ 
+Game: 6
+placement #1
+1 Bard
+1 Spell Thief
+4 Tempest
+2 Bruiser
+2 Evoker
+1 Guild
+3 Mage
+2 Mystic
+2 Trainer
+ 
+Game: 7
+placement #3
+1 Spell Thief
+6 Mage
+2 Evoker
+1 Guild
+2 Mystic
+4 Shimmerscale
+2 Trainer
+ 
+Game: 8
+placement #5
+1 Bard
+3 Cannoneer
+3 Revel
+2 Evoker
+1 Guild
+2 Mystic
+3 Shimmerscale
+2 Trainer
+ 
+Game: 9
+placement #6
+3 Cavalier
+2 Bruiser
+2 Guild
+3 Ragewing
+2 Swiftshot
+ 
+Game: 10
+placement #6
+1 Bard
+1 Spell Thief
+5 Mage
+2 Guild
+2 Mystic
+3 Tempest
+2 Trainer
+ 
+rank#6
+EL EKOINOMISTA
+https://lolchess.gg/profile/euw/elekoinomista
+Game: 1
+placement #2
+7 Mage
+1 Spell Thief
+2 Bruiser
+1 Guild
+2 Mystic
+2 Trainer
+ 
+Game: 2
+placement #2
+4 Assassin
+1 Bard
+4 Scalescorn
+2 Guild
+2 Warrior
+ 
+Game: 3
+placement #1
+6 Shapeshifter
+1 Starcaller
+3 Jade
+4 Ragewing
+ 
+Game: 4
+placement #1
+7 Mage
+1 Spell Thief
+3 Astral
+2 Bruiser
+2 Evoker
+1 Guild
+2 Mystic
+2 Trainer
+ 
+Game: 5
+placement #3
+6 Jade
+3 Dragonmancer
+2 Guardian
+2 Mirage
+2 Swiftshot
+2 Tempest
+ 
+Game: 6
+placement #8
+4 Guardian
+3 Mirage
+2 Warrior
+ 
+Game: 7
+placement #3
+1 Bard
+1 Spell Thief
+5 Mage
+3 Mystic
+2 Bruiser
+2 Evoker
+2 Guild
+2 Trainer
+ 
+Game: 8
+placement #6
+4 Scalescorn
+4 Bruiser
+2 Assassin
+2 Warrior
+ 
+Game: 9
+placement #2
+1 Bard
+1 Spell Thief
+4 Tempest
+2 Evoker
+1 Guild
+2 Mystic
+ 
+Game: 10
+placement #3
+6 Jade
+3 Dragonmancer
+3 Guardian
+2 Swiftshot
+2 Tempest
+ 
+rank#7
+xiellendario
+https://lolchess.gg/profile/euw/xiellendario
+Game: 1
+placement #8
+ 
+Game: 2
+placement #1
+4 Assassin
+4 Bruiser
+1 Guild
+2 Scalescorn
+2 Tempest
+2 Warrior
+2 Whispers
+ 
+Game: 3
+placement #8
+1 Spell Thief
+4 Tempest
+3 Bruiser
+1 Guild
+4 Mage
+2 Mystic
+2 Trainer
+ 
+Game: 4
+placement #3
+4 Assassin
+4 Scalescorn
+4 Bruiser
+2 Tempest
+2 Warrior
+2 Whispers
+ 
+Game: 5
+placement #1
+1 Bard
+1 Spell Thief
+1 Starcaller
+4 Tempest
+1 Guild
+ 
+Game: 6
+placement #2
+1 Spell Thief
+5 Mage
+2 Bruiser
+1 Guild
+2 Mystic
+2 Tempest
+2 Trainer
+ 
+Game: 7
+placement #1
+6 Assassin
+4 Bruiser
+1 Guild
+2 Scalescorn
+2 Tempest
+3 Warrior
+2 Whispers
+ 
+Game: 8
+placement #4
+1 Bard
+1 Spell Thief
+5 Mage
+4 Astral
+2 Bruiser
+2 Evoker
+1 Guild
+2 Mystic
+2 Trainer
+ 
+Game: 9
+placement #3
+1 Bard
+3 Guild
+2 Assassin
+3 Bruiser
+3 Ragewing
+2 Swiftshot
+2 Tempest
+ 
+Game: 10
+placement #5
+1 Bard
+4 Scalescorn
+4 Warrior
+4 Bruiser
+2 Assassin
+1 Guild
+2 Tempest
+ 
+rank#8
+Ersinnx
+https://lolchess.gg/profile/euw/ersinnx
+Game: 1
+placement #3
+4 Assassin
+4 Scalescorn
+4 Bruiser
+1 Guild
+2 Tempest
+2 Warrior
+ 
+Game: 2
+placement #7
+8 Mirage
+3 Cavalier
+2 Guardian
+1 Guild
+ 
+Game: 3
+placement #3
+4 Assassin
+4 Bruiser
+1 Guild
+2 Scalescorn
+2 Tempest
+2 Warrior
+ 
+Game: 4
+placement #5
+1 Spell Thief
+5 Mage
+3 Bruiser
+2 Evoker
+1 Guild
+2 Mystic
+2 Trainer
+ 
+Game: 5
+placement #6
+5 Mage
+3 Astral
+2 Bruiser
+1 Guild
+2 Mystic
+2 Trainer
+ 
+Game: 6
+placement #3
+5 Mage
+2 Bruiser
+2 Evoker
+1 Guild
+3 Tempest
+2 Trainer
+ 
+Game: 7
+placement #3
+4 Revel
+2 Cannoneer
+2 Evoker
+2 Guardian
+3 Shimmerscale
+ 
+Game: 8
+placement #5
+4 Assassin
+4 Bruiser
+1 Guild
+2 Scalescorn
+2 Tempest
+2 Warrior
+2 Whispers
+ 
+Game: 9
+placement #3
+4 Mystic
+5 Mage
+4 Tempest
+2 Bruiser
+1 Guild
+2 Trainer
+ 
+Game: 10
+placement #3
+5 Mage
+4 Tempest
+2 Bruiser
+2 Evoker
+1 Guild
+2 Mystic
+2 Trainer
+ 
+rank#9
+Liquid Snoodyboo
+https://lolchess.gg/profile/euw/liquidsnoodyboo
+Game: 1
+placement #2
+1 Bard
+6 Mirage
+2 Cavalier
+1 Guild
+2 Tempest
+2 Whispers
+ 
+Game: 2
+placement #2
+1 Bard
+4 Mystic
+1 Spell Thief
+5 Mage
+2 Bruiser
+2 Evoker
+2 Guild
+2 Trainer
+ 
+Game: 3
+placement #3
+1 Bard
+7 Mage
+1 Spell Thief
+3 Mystic
+2 Guild
+2 Trainer
+ 
+Game: 4
+placement #7
+1 Bard
+6 Mirage
+3 Cavalier
+2 Guild
+ 
+Game: 5
+placement #5
+1 Bard
+1 Starcaller
+2 Guardian
+2 Guild
+2 Mystic
+3 Ragewing
+3 Shimmerscale
+2 Swiftshot
+ 
+Game: 6
+placement #5
+4 Bruiser
+4 Shapeshifter
+3 Astral
+2 Whispers
+ 
+Game: 7
+placement #1
+4 Assassin
+4 Bruiser
+1 Guild
+2 Scalescorn
+2 Tempest
+2 Warrior
+2 Whispers
+ 
+Game: 8
+placement #7
+4 Guardian
+3 Dragonmancer
+3 Jade
+3 Shimmerscale
+2 Swiftshot
+2 Tempest
+ 
+Game: 9
+placement #1
+6 Assassin
+4 Bruiser
+1 Guild
+3 Scalescorn
+2 Tempest
+2 Warrior
+2 Whispers
+ 
+Game: 10
+placement #7
+5 Mage
+2 Evoker
+1 Guild
+2 Mystic
+2 Revel
+2 Trainer
+ 
+rank#10
+KC Double61
+https://lolchess.gg/profile/euw/kcdouble61
+Game: 1
+placement #3
+6 Jade
+3 Dragonmancer
+2 Guardian
+2 Swiftshot
+2 Tempest
+ 
+Game: 2
+placement #2
+7 Whispers
+4 Bruiser
+2 Tempest
+ 
+Game: 3
+placement #6
+6 Dragonmancer
+3 Legend
+3 Jade
+2 Shapeshifter
+2 Tempest
+ 
+Game: 4
+placement #7
+1 Spell Thief
+6 Ragewing
+1 Guild
+4 Shimmerscale
+2 Swiftshot
+ 
+Game: 5
+placement #1
+1 Bard
+1 Spell Thief
+1 Starcaller
+6 Shimmerscale
+2 Guild
+3 Mage
+ 
+Game: 6
+placement #3
+1 Starcaller
+6 Tempest
+3 Jade
+2 Shapeshifter
+ 
+Game: 7
+placement #8
+1 Bard
+1 Spell Thief
+1 Starcaller
+4 Tempest
+1 Guild
+ 
+Game: 8
+placement #1
+8 Mirage
+1 Bard
+1 Starcaller
+2 Cavalier
+1 Guild
+2 Warrior
+ 
+Game: 9
+placement #3
+1 Bard
+4 Swiftshot
+2 Guild
+3 Shimmerscale
+2 Tempest
+ 
+Game: 10
+placement #2
+9 Ragewing
+2 Bruiser
+3 Dragonmancer
+2 Shapeshifter
+2 Warrior
+ 
+['4 Swiftshot', '4 Bruiser', '3 Ragewing', '4 Assassin', '3 Shimmerscale', '7 Mage', '6 Ragewing', '6 Jade', '3 Dragonmancer', '3 Ragewing', '4 Swiftshot', '4 Bruiser', '6 Jade', '4 Shapeshifter', '6 Ragewing', '6 Mirage', '5 Mage', '6 Jade', '3 Dragonmancer', '3 Ragewing', '3 Shapeshifter', '5 Mage', '3 Mystic', '4 Cavalier', '3 Guild', '3 Ragewing', '4 Bruiser', '4 Tempest', '3 Mage', '6 Bruiser', '4 Whispers', '6 Dragonmancer', '3 Ragewing', '3 Shimmerscale', '4 Bruiser', '5 Mage', '6 Jade', '3 Dragonmancer', '3 Ragewing', '3 Dragonmancer', '3 Ragewing', '6 Jade', '3 Dragonmancer', '6 Dragonmancer', '3 Jade', '3 Ragewing', '3 Shapeshifter', '4 Cavalier', '4 Guild', '7 Jade', '3 Dragonmancer', '4 Tempest', '3 Mage', '3 Legend', '6 Tempest', '3 Dragonmancer', '3 Ragewing', '3 Shimmerscale', '4 Scalescorn', '4 Swiftshot', '3 Astral', '7 Mage', '6 Ragewing', '4 Shapeshifter', '3 Dragonmancer', '3 Jade', '4 Tempest', '3 Mage', '4 Assassin', '4 Scalescorn', '4 Bruiser', '6 Jade', '3 Dragonmancer', '4 Guild', '3 Ragewing', '4 Guild', '6 Ragewing', '3 Ragewing', '3 Shimmerscale', '6 Jade', '4 Cavalier', '7 Mirage', '7 Mage', '3 Mystic', '4 Astral', '3 Mystic', '3 Ragewing', '3 Shimmerscale', '6 Dragonmancer', '6 Jade', '6 Shapeshifter', '4 Ragewing', '4 Guild', '3 Ragewing', '5 Assassin', '4 Bruiser', '3 Warrior', '4 Scalescorn', '4 Warrior', '4 Evoker', '4 Tempest', '3 Mage', '4 Tempest', '3 Mage', '6 Mage', '4 Shimmerscale', '3 Cannoneer', '3 Revel', '3 Shimmerscale', '3 Cavalier', '3 Ragewing', '5 Mage', '3 Tempest', '7 Mage', '4 Assassin', '4 Scalescorn', '6 Shapeshifter', '3 Jade', '4 Ragewing', '7 Mage', '3 Astral', '6 Jade', '3 Dragonmancer', '4 Guardian', '3 Mirage', '5 Mage', '3 Mystic', '4 Scalescorn', '4 Bruiser', '4 Tempest', '6 Jade', '3 Dragonmancer', '3 Guardian', '4 Assassin', '4 Bruiser', '4 Tempest', '3 Bruiser', '4 Mage', '4 Assassin', '4 Scalescorn', '4 Bruiser', '4 Tempest', '5 Mage', '6 Assassin', '4 Bruiser', '3 Warrior', '5 Mage', '4 Astral', '3 Guild', '3 Bruiser', '3 Ragewing', '4 Scalescorn', '4 Warrior', '4 Bruiser', '4 Assassin', '4 Scalescorn', '4 Bruiser', '8 Mirage', '3 Cavalier', '4 Assassin', '4 Bruiser', '5 Mage', '3 Bruiser', '5 Mage', '3 Astral', '5 Mage', '3 Tempest', '4 Revel', '3 Shimmerscale', '4 Assassin', '4 Bruiser', '4 Mystic', '5 Mage', '4 Tempest', '5 Mage', '4 Tempest', '6 Mirage', '4 Mystic', '5 Mage', '7 Mage', '3 Mystic', '6 Mirage', '3 Cavalier', '3 Ragewing', '3 Shimmerscale', '4 Bruiser', '4 Shapeshifter', '3 Astral', '4 Assassin', '4 Bruiser', '4 Guardian', '3 Dragonmancer', '3 Jade', '3 Shimmerscale', '6 Assassin', '4 Bruiser', '3 Scalescorn', '5 Mage', '6 Jade', '3 Dragonmancer', '7 Whispers', '4 Bruiser', '6 Dragonmancer', '3 Legend', '3 Jade', '6 Ragewing', '4 Shimmerscale', '6 Shimmerscale', '3 Mage', '6 Tempest', '3 Jade', '4 Tempest', '8 Mirage', '4 Swiftshot', '3 Shimmerscale', '9 Ragewing', '3 Dragonmancer']
+['4 Swiftshot', '4 Bruiser', '3 Ragewing', '7 Mage', '6 Ragewing', '4 Swiftshot', '4 Bruiser', '6 Jade', '4 Shapeshifter', '6 Ragewing', '5 Mage', '6 Jade', '3 Dragonmancer', '3 Ragewing', '3 Shapeshifter', '5 Mage', '3 Mystic', '4 Cavalier', '3 Guild', '3 Ragewing', '4 Bruiser', '4 Tempest', '3 Mage', '6 Bruiser', '4 Whispers', '4 Bruiser', '5 Mage', '6 Jade', '3 Dragonmancer', '4 Cavalier', '4 Guild', '7 Jade', '3 Dragonmancer', '4 Tempest', '3 Mage', '3 Legend', '6 Tempest', '3 Dragonmancer', '3 Ragewing', '3 Shimmerscale', '4 Scalescorn', '4 Swiftshot', '3 Astral', '6 Ragewing', '4 Shapeshifter', '3 Dragonmancer', '3 Jade', '6 Jade', '3 Dragonmancer', '4 Guild', '3 Ragewing', '4 Guild', '6 Ragewing', '3 Ragewing', '3 Shimmerscale', '6 Jade', '4 Cavalier', '7 Mirage', '7 Mage', '3 Mystic', '4 Astral', '3 Mystic', '3 Ragewing', '3 Shimmerscale', '6 Dragonmancer', '6 Jade', '6 Shapeshifter', '4 Ragewing', '4 Guild', '3 Ragewing', '5 Assassin', '4 Bruiser', '3 Warrior', '4 Evoker', '4 Tempest', '3 Mage', '4 Tempest', '3 Mage', '6 Mage', '4 Shimmerscale', '7 Mage', '4 Assassin', '4 Scalescorn', '6 Shapeshifter', '3 Jade', '4 Ragewing', '7 Mage', '3 Astral', '6 Jade', '3 Dragonmancer', '5 Mage', '3 Mystic', '4 Tempest', '6 Jade', '3 Dragonmancer', '3 Guardian', '4 Assassin', '4 Bruiser', '4 Assassin', '4 Scalescorn', '4 Bruiser', '4 Tempest', '5 Mage', '6 Assassin', '4 Bruiser', '3 Warrior', '5 Mage', '4 Astral', '3 Guild', '3 Bruiser', '3 Ragewing', '4 Assassin', '4 Scalescorn', '4 Bruiser', '4 Assassin', '4 Bruiser', '5 Mage', '3 Tempest', '4 Revel', '3 Shimmerscale', '4 Mystic', '5 Mage', '4 Tempest', '5 Mage', '4 Tempest', '6 Mirage', '4 Mystic', '5 Mage', '7 Mage', '3 Mystic', '4 Assassin', '4 Bruiser', '6 Assassin', '4 Bruiser', '3 Scalescorn', '6 Jade', '3 Dragonmancer', '7 Whispers', '4 Bruiser', '6 Shimmerscale', '3 Mage', '6 Tempest', '3 Jade', '8 Mirage', '4 Swiftshot', '3 Shimmerscale', '9 Ragewing', '3 Dragonmancer']
+Most frequent synergy: 4 Bruiser
+Most frequent winning synergy: 4 Bruiser
+217
+148
