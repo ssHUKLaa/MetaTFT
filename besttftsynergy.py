@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 import requests
 from bs4 import BeautifulSoup
 from collections import Counter
@@ -103,7 +102,6 @@ print(winning_synergies)
 print("Most frequent synergy: " + most_frequent(synergies))
 print("Most frequent winning synergy: " + most_frequent(winning_synergies))
 print(len(synergies))
-=======
 import requests
 from bs4 import BeautifulSoup
 from collections import Counter
@@ -208,5 +206,4 @@ print(winning_synergies)
 print("Most frequent synergy: " + most_frequent(synergies))
 print("Most frequent winning synergy: " + most_frequent(winning_synergies))
 print(len(synergies))
->>>>>>> Stashed changes
 print(len(winning_synergies)) #prints everything we need 
