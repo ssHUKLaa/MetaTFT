@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 rank#1
 TTVBebe872
 https://lolchess.gg/profile/kr/ttvbebe872
@@ -379,3 +380,386 @@ placement #4
 2 Trainer
  
 rank#5
+=======
+rank#1
+TTVBebe872
+https://lolchess.gg/profile/kr/ttvbebe872
+Game: 1
+placement #8
+1 Starcaller
+2 Bruiser
+2 Evoker
+1 Guild
+3 Mage
+2 Revel
+2 Trainer
+ 
+Game: 2
+placement #3
+4 Assassin
+4 Scalescorn
+2 Bruiser
+2 Cavalier
+2 Guardian
+2 Guild
+2 Warrior
+2 Whispers
+ 
+Game: 3
+placement #1
+1 Bard
+1 Spell Thief
+1 Starcaller
+4 Tempest
+2 Bruiser
+1 Guild
+3 Mage
+2 Mystic
+ 
+Game: 4
+placement #2
+1 Bard
+6 Mirage
+2 Guild
+2 Mystic
+2 Warrior
+ 
+Game: 5
+placement #2
+1 Bard
+1 Spell Thief
+1 Starcaller
+4 Tempest
+2 Bruiser
+1 Guild
+3 Mage
+2 Mystic
+ 
+Game: 6
+placement #5
+1 Bard
+4 Shapeshifter
+3 Dragonmancer
+1 Guild
+3 Jade
+3 Ragewing
+ 
+Game: 7
+placement #1
+6 Mirage
+1 Spell Thief
+2 Bruiser
+2 Cavalier
+2 Guardian
+3 Mage
+2 Warrior
+2 Whispers
+ 
+Game: 8
+placement #3
+1 Bard
+3 Mystic
+4 Whispers
+3 Bruiser
+2 Evoker
+1 Guild
+3 Mage
+2 Revel
+2 Trainer
+ 
+Game: 9
+placement #4
+1 Bard
+1 Spell Thief
+3 Mystic
+2 Bruiser
+2 Cannoneer
+1 Guild
+3 Mage
+2 Trainer
+ 
+Game: 10
+placement #1
+1 Bard
+1 Spell Thief
+4 Guild
+4 Tempest
+2 Bruiser
+3 Mage
+ 
+rank#2
+Ginggg
+https://lolchess.gg/profile/tr/ginggg
+Game: 1
+placement #1
+6 Assassin
+4 Bruiser
+1 Guild
+2 Scalescorn
+2 Tempest
+2 Warrior
+2 Whispers
+ 
+Game: 2
+placement #1
+9 Ragewing
+2 Bruiser
+3 Dragonmancer
+2 Shapeshifter
+2 Warrior
+ 
+Game: 3
+placement #4
+6 Whispers
+4 Bruiser
+2 Guild
+ 
+Game: 4
+placement #1
+4 Scalescorn
+4 Bruiser
+2 Assassin
+2 Guardian
+2 Tempest
+2 Warrior
+2 Whispers
+ 
+Game: 5
+placement #6
+3 Guild
+6 Ragewing
+2 Cavalier
+2 Shapeshifter
+2 Swiftshot
+ 
+Game: 6
+placement #1
+6 Warrior
+6 Mirage
+4 Bruiser
+ 
+Game: 7
+placement #1
+6 Whispers
+6 Bruiser
+2 Assassin
+1 Guild
+2 Warrior
+ 
+Game: 8
+placement #3
+3 Cavalier
+2 Bruiser
+2 Guild
+3 Ragewing
+2 Swiftshot
+ 
+Game: 9
+placement #1
+1 Bard
+3 Revel
+2 Bruiser
+2 Cannoneer
+2 Evoker
+1 Guild
+2 Mystic
+3 Shimmerscale
+2 Trainer
+ 
+Game: 10
+placement #5
+6 Mirage
+3 Cavalier
+2 Whispers
+ 
+rank#3
+sètsuko
+https://lolchess.gg/profile/na/s%C3%A8tsuko
+Game: 1
+placement #2
+6 Assassin
+4 Bruiser
+1 Guild
+2 Scalescorn
+2 Tempest
+2 Warrior
+2 Whispers
+ 
+Game: 2
+placement #5
+6 Shapeshifter
+1 Starcaller
+3 Jade
+4 Ragewing
+ 
+Game: 3
+placement #4
+6 Jade
+4 Dragonmancer
+3 Ragewing
+2 Shapeshifter
+2 Swiftshot
+ 
+Game: 4
+placement #3
+1 Starcaller
+3 Jade
+4 Ragewing
+2 Shapeshifter
+2 Swiftshot
+ 
+Game: 5
+placement #1
+1 Bard
+1 Spell Thief
+1 Starcaller
+4 Tempest
+2 Guild
+3 Jade
+2 Shapeshifter
+ 
+Game: 6
+placement #1
+4 Assassin
+4 Bruiser
+1 Guild
+2 Scalescorn
+2 Tempest
+3 Warrior
+ 
+Game: 7
+placement #5
+6 Dragonmancer
+6 Jade
+2 Swiftshot
+2 Tempest
+ 
+Game: 8
+placement #1
+1 Bard
+2 Bruiser
+2 Guardian
+2 Guild
+2 Mystic
+3 Ragewing
+3 Shimmerscale
+2 Swiftshot
+2 Tempest
+2 Warrior
+ 
+Game: 9
+placement #4
+4 Bruiser
+3 Assassin
+1 Guild
+2 Scalescorn
+2 Tempest
+2 Warrior
+ 
+Game: 10
+placement #1
+1 Bard
+1 Starcaller
+4 Tempest
+1 Guild
+3 Jade
+2 Mystic
+2 Shapeshifter
+ 
+rank#4
+FB Arat
+https://lolchess.gg/profile/tr/fbarat
+Game: 1
+placement #7
+3 Cannoneer
+3 Revel
+2 Evoker
+2 Guardian
+3 Shimmerscale
+2 Trainer
+ 
+Game: 2
+placement #1
+1 Bard
+9 Jade
+1 Starcaller
+3 Dragonmancer
+1 Guild
+2 Mystic
+2 Shapeshifter
+ 
+Game: 3
+placement #2
+1 Starcaller
+6 Jade
+3 Dragonmancer
+4 Ragewing
+3 Shapeshifter
+ 
+Game: 4
+placement #1
+4 Assassin
+4 Scalescorn
+4 Bruiser
+1 Guild
+2 Warrior
+2 Whispers
+ 
+Game: 5
+placement #6
+6 Bruiser
+4 Whispers
+2 Assassin
+2 Scalescorn
+2 Tempest
+2 Warrior
+ 
+Game: 6
+placement #2
+1 Starcaller
+3 Cannoneer
+3 Revel
+2 Evoker
+2 Guardian
+3 Shimmerscale
+2 Trainer
+ 
+Game: 7
+placement #5
+6 Ragewing
+3 Shapeshifter
+2 Swiftshot
+ 
+Game: 8
+placement #3
+1 Bard
+4 Mystic
+1 Spell Thief
+5 Mage
+4 Tempest
+2 Bruiser
+1 Guild
+2 Trainer
+ 
+Game: 9
+placement #1
+1 Bard
+1 Spell Thief
+5 Mage
+4 Tempest
+2 Bruiser
+2 Guild
+2 Mystic
+2 Trainer
+ 
+Game: 10
+placement #4
+1 Spell Thief
+5 Mage
+2 Bruiser
+2 Mystic
+3 Tempest
+2 Trainer
+ 
+rank#5
+>>>>>>> Stashed changes
