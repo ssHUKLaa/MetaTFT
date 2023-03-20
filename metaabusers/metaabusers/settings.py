@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-qmc)!presl=re*0$sq=pcwsst($l2flb%sa*-p*h%u5k1vehtg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'metaabusers.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'Players_dugfullywe',
+        'USER': 'Players_dugfullywe',
+        'PASSWORD': '83f719c6f5f1e59be109efa6be3aea75ad2e53d7',
+        'HOST': '29n.h.filess.io',
+        'PORT': '3306'
     }
 }
 
