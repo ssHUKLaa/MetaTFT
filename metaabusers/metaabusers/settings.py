@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'topplayers.apps.TopplayersConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -76,11 +77,11 @@ WSGI_APPLICATION = 'metaabusers.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Players_dugfullywe',
-        'USER': 'Players_dugfullywe',
-        'PASSWORD': '83f719c6f5f1e59be109efa6be3aea75ad2e53d7',
-        'HOST': '29n.h.filess.io',
-        'PORT': '3306'
+        'NAME': 'Players_wonderface',
+        'USER': 'Players_wonderface',
+        'PASSWORD': '638b87df3bc0df5c66fdb20ac7802043354110c8',
+        'HOST': 'dws.h.filess.io',
+        'PORT': '3307'
     }
 }
 
@@ -109,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Chicago'
 
 USE_I18N = True
 
