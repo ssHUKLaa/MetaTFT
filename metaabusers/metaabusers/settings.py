@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-
+import djongo
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'metaabusers',
     'topplayers.apps.TopplayersConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -76,12 +77,12 @@ WSGI_APPLICATION = 'metaabusers.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Players_wonderface',
-        'USER': 'Players_wonderface',
-        'PASSWORD': '638b87df3bc0df5c66fdb20ac7802043354110c8',
-        'HOST': 'dws.h.filess.io',
-        'PORT': '3307'
+        'ENGINE': 'djongo',
+        'NAME': 'Cluster0',
+        'ENFORCE_SCHEMA': False,
+        'CLIENT': {
+            'host': 'mongodb+srv://admin:<1805Destroyer_>@cluster0.mdsp01i.mongodb.net/?retryWrites=true&w=majority'
+        }
     }
 }
 
