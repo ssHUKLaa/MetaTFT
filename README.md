@@ -1,5 +1,5 @@
 # Top-x-synergies
-#CURRENTLY REVAMPING AND ADDING LOTS OF COOL STUFF 
+# CURRENTLY REVAMPING AND ADDING LOTS OF COOL STUFF 
 ![image](https://user-images.githubusercontent.com/64566855/227442824-c2058b21-eae0-45db-bcf8-90527ea9f943.png)
 
 Basically an aggregator of the top traits used by top players in the game Teamfight Tactics.
