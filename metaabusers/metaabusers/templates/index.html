@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block title %}<title>Local Library</title>{% endblock %}
+  <meta charset="UTF-8" />
+  <title>Hello, world!</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+  <link rel="icon" href="favicon.png">
+</head>
+<body>
+  <h1>test</h1>
+  <form action={% url 'index'%} method="POST">
+    {% csrf_token %}
+    <p><input type="text" name="inp_number" placeholder="summoner name"/></p>
+    <p><input type="submit" value="Submit"/></p>            
+</form>
+</body>
+</html>

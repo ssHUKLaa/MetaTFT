@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'metaabusers',
     'topplayers.apps.TopplayersConfig',
     'django.contrib.admin',
     'django.contrib.auth',
