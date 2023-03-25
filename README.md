@@ -1,4 +1,7 @@
 # Top-x-synergies
+# CURRENTLY REVAMPING AND ADDING LOTS OF COOL STUFF 
+![image](https://user-images.githubusercontent.com/64566855/227442824-c2058b21-eae0-45db-bcf8-90527ea9f943.png)
+
 Basically an aggregator of the top traits used by top players in the game Teamfight Tactics.
 The output list can be modified by both Region and Player count (starting from top1, times out after 1000 instances).
 without using selenium to refresh, the output loads in 100x faster, but that data won't be updated to this moment.
