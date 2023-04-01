@@ -1,8 +1,9 @@
 from riotwatcher import TftWatcher, ApiError, LolWatcher
 from datetime import datetime
 from django.utils import timezone
-watcher= TftWatcher('RGAPI-c9b7c5d8-c729-47a0-973f-53cd1fc2bd8f')
-lolwatcher= LolWatcher('RGAPI-c9b7c5d8-c729-47a0-973f-53cd1fc2bd8f')
+apikey='RGAPI-b31bfb3b-fba1-4b5e-a3c3-56eef7dd7173'
+watcher= TftWatcher(apikey)
+lolwatcher= LolWatcher(apikey)
 my_region = 'na1'
 version=lolwatcher.data_dragon.versions_for_region(my_region)
 
@@ -36,7 +37,7 @@ def getMatches(player):
     matches=watcher.match.by_puuid(my_region,player.get('puuid'))
 
     match=watcher.match.by_id(my_region,matches[0])
-    return str((((match.get('info')).get('participants'))[0]))
+    return str((((match.get('info')).get('participants')))[5])
     matchinfo=match.get('info')
 
 def matchTime(match):
