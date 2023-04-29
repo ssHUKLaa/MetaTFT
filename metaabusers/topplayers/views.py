@@ -10,7 +10,9 @@ def index(request):
 def players_by_api(request, player):
     if (getPlayer(player)==False):
         return HttpResponse(f'not a person')
-    contestant=getPlayer(player)
-    tes=requests.get(getProfilePicture(contestant))
-    return HttpResponse(tes.content, content_type="image/png")
+    contestant=(getPlayer(player))
+    tes=(getProfilePicture(contestant))
+    playername={"player": contestant.get('name'), "profpic": tes}
+    profilepic={"profpic": tes}
+    return render(request, 'topplayers/player.html',playername)
 # Create your views here.
