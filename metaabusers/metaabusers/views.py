@@ -14,9 +14,9 @@ def index(request):
 def topplayers(request):
     x=0
     hold=getChallengerPlayers()
-    b= Players()
     try:
         while x<150:
+            b = Players()
             b.name=str(list(dict(list(hold.values())[x]).values())).strip("[]'")
             b.playerId=str(list(dict(list(hold.values())[x]).keys())).strip("[]'")
             b.LP=list(hold.keys())[x]
