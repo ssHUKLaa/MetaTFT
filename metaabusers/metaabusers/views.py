@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from topplayers.withriotapi import getChallengerPlayers
-
+from . import rebestplayer
 
 def index(request):
     if request.method == 'POST':
@@ -12,7 +12,7 @@ def index(request):
     return render(request, 'index.html')
 
 def topplayers(request):
-    
+    rebestplayer.cron_reloadbest()
     return HttpResponse(str(getChallengerPlayers()))
 
 # Create your views here.
