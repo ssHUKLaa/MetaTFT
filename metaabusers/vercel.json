@@ -3,6 +3,7 @@
     {
     "src": "metaabusers/wsgi.py",
     "use": "@vercel/python"
+    
     }
     ],
     "routes": [
@@ -10,5 +11,9 @@
     "src": "/(.*)",
     "dest": "metaabusers/wsgi.py"
     }
-    ]
+    ,{
+        "trailingSlash": true
     }
+    ]
+    
+}
