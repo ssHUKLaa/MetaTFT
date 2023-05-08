@@ -74,7 +74,8 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'metaabusers.wsgi.application'
+#WSGI_APPLICATION = 'metaabusers.wsgi.application'
+WSGI_APPLICATION = 'metaabusers.wsgi.app'
 
 
 # Database
