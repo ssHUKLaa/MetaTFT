@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from .withriotapi import getChallengerPlayers, getPlayer, getMatches, getProfilePicture
-from .models import Players
 import requests
 
 def index(request):
