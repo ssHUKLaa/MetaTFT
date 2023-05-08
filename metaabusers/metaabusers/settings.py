@@ -39,6 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_crontab',
+]
+#https://en.wikipedia.org/wiki/Cron#Format
+CRONJOBS = [
+    ('1 0 * * *', '.rebestplayer.cron_reloadbes')
 ]
 
 MIDDLEWARE = [
