@@ -2,9 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from topplayers.withriotapi import getChallengerPlayers
-from .models import Players
-from django.utils import timezone
-import pytz
+
 
 def index(request):
     if request.method == 'POST':
@@ -14,21 +12,7 @@ def index(request):
     return render(request, 'index.html')
 
 def topplayers(request):
-    x=0
-    hold=getChallengerPlayers()
-    time=timezone.now()
-    try:
-        while x<150:
-            b = Players()
-            b.autoinc=x
-            b.name=str(list(dict(list(hold.values())[x]).values())).strip("[]'")
-            b.playerId=str(list(dict(list(hold.values())[x]).keys())).strip("[]'")
-            b.LP=list(hold.keys())[x]
-            b.add_date=time
-            x+=1
-            b.save()
-    except:
-        return HttpResponse("na")
+    
     return HttpResponse(str(getChallengerPlayers()))
 
 # Create your views here.
