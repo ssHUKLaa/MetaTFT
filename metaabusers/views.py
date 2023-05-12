@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import redirect
-from topplayers.withriotapi import getChallengerPlayers
-from . import rebestplayer
+from . import rebestplayer, tes
+
 
 def index(request):
     if request.method == 'POST':
@@ -12,8 +12,16 @@ def index(request):
     return render(request, 'index.html')
 
 def topplayers(request):
-    
-    rebestplayer.cron_reloadbest()
-    return HttpResponse(str(getChallengerPlayers()))
+    print('hi')
+    if request.method == 'POST':
+        if request.POST.get("Refresh"):
+            rebestplayer.cron_reloadbest()
+    playerlist = tes.swa()
+    print('klwdnglk')
+    return HttpResponse(playerlist)
+    #return render(request, 'bestplayers.html')
+
+
+
 
 # Create your views here.

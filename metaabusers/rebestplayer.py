@@ -3,6 +3,9 @@ from django.utils import timezone
 from topplayers.withriotapi import getChallengerPlayers
 import pytz
 
+def getPlayers():
+    return Players
+
 def cron_reloadbest():
     x=0
     hold=getChallengerPlayers()

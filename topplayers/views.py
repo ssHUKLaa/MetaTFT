@@ -17,6 +17,5 @@ def players_by_api(request, player):
     contestant=(getPlayer(player))
     tes=(getProfilePicture(contestant))
     playername={"player": contestant.get('name'), "profpic": tes}
-    profilepic={"profpic": tes}
     return render(request, 'topplayers/player.html',playername)
 # Create your views here.
