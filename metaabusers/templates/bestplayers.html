@@ -13,5 +13,16 @@
     {% csrf_token %}
     <button type="submit" name="Refresh" value="RefreshList">Refresh</button>
   </form>
+  <table>
+    <tbody>
+      {% for pl in topplayers %}
+      <tr>
+        {% for l in pl}
+          <td>{{l}}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </body>
 </html>

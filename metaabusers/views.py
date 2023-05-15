@@ -47,6 +47,7 @@ def topplayers(request):
 
     # Retrieve the result from the result container
     result = result_container[0] if result_container else None
+    print(result)
 
     return render(request, 'bestplayers.html')
 
