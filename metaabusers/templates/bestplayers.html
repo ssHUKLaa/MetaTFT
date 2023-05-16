@@ -12,17 +12,20 @@
   <form action="{% url 'bestplayers'%}" method="post"> 
     {% csrf_token %}
     <button type="submit" name="Refresh" value="RefreshList">Refresh</button>
-  </form>
-  <table>
-    <tbody>
-      {% for pl in topplayers %}
+  </form> 
+  <table style="width:100%">
+    <tr>
+      <th>tes 1</th>
+      <th>tes 2</th>
+      <th>tes 3</th>
+    </tr>
+      {% for pl in toplayers %}
       <tr>
-        {% for l in pl}
-          <td>{{l}}</td>
-        {% endfor %}
+          <td>{{pl.0}}</td>
+          <td>{{pl.1}}</td>
+          <td>{{pl.2}}</td>
       </tr>
       {% endfor %}
-    </tbody>
   </table>
 </body>
 </html>

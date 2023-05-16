@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import redirect
-from . import rebestplayer, tes
+from . import rebestplayer
 import threading
 
 
@@ -15,6 +15,7 @@ def index(request):
 def topplayers(request):
     if request.method == 'POST':
         if request.POST.get("Refresh"):
+            is_running = threading.Event()
             result_container = []
 
             def threaded_operation():
@@ -25,31 +26,14 @@ def topplayers(request):
             # Create a new thread and assign the threaded_operation function as the target
             t = threading.Thread(target=threaded_operation, daemon=True)
             t.start()
+            t.join()
+            BestPlayers = list(rebestplayer.getPlayers().objects.values_list('autoinc', 'name', 'LP'))
+
             # Check if the threaded operation is still running
-    is_running = threading.Event()
+    BestPlayers = list(rebestplayer.getPlayers().objects.values_list('autoinc', 'name', 'add_date'))
 
-    # Define a container for the result
-    result_container = []
-
-    def threaded_operation():
-        result = tes.calculateBestPlayers()
-        result_container.append(result)
-        is_running.clear()  # Set the flag to indicate that the operation has completed
-
-    # Create a new thread and assign the threaded_operation function as the target
-    t = threading.Thread(target=threaded_operation, daemon=True)
-    t.start()
-
-    # Check if the threaded operation is still running
-
-    # Wait for the threaded operation to complete
-    t.join()
-
-    # Retrieve the result from the result container
-    result = result_container[0] if result_container else None
-    topplayerslist = {"topplayers" : result}
-
-    return render(request, 'bestplayers.html', topplayerslist)
+    players = {'toplayers':BestPlayers}
+    return render(request, 'bestplayers.html', players)
 
 
 
