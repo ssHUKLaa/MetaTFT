@@ -4,6 +4,7 @@
     {% block title %}<title>Best Players</title>{% endblock %}
   <meta charset="UTF-8" />
   <title>Lorem Ipsum</title>
+  <link rel="stylesheet" href="../../static/css/bestplayers.css">
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="" />
 </head>
@@ -14,11 +15,11 @@
     <button type="submit" name="Refresh" value="RefreshList">Refresh</button>
     <p>last refreshed on {{refreshedtime}}</p>
   </form> 
-  <table style="width:100%">
+  <table style="width:40%">
     <tr>
-      <th>tes 1</th>
-      <th>tes 2</th>
-      <th>tes 3</th>
+      <th>rank</th>
+      <th>name</th>
+      <th>LP</th>
     </tr>
       {% for pl in toplayers %}
       <tr>
