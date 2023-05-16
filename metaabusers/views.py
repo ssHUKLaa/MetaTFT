@@ -27,12 +27,13 @@ def topplayers(request):
             t = threading.Thread(target=threaded_operation, daemon=True)
             t.start()
             t.join()
-            BestPlayers = list(rebestplayer.getPlayers().objects.values_list('autoinc', 'name', 'LP'))
 
             # Check if the threaded operation is still running
-    BestPlayers = list(rebestplayer.getPlayers().objects.values_list('autoinc', 'name', 'add_date'))
+    refreshed=rebestplayer.getPlayers().objects.first().add_date
 
-    players = {'toplayers':BestPlayers}
+    BestPlayers = list(rebestplayer.getPlayers().objects.values_list('autoinc', 'name', 'LP'))
+
+    players = {'toplayers':BestPlayers, 'refreshedtime':refreshed}
     return render(request, 'bestplayers.html', players)
 
 

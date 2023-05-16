@@ -12,6 +12,7 @@
   <form action="{% url 'bestplayers'%}" method="post"> 
     {% csrf_token %}
     <button type="submit" name="Refresh" value="RefreshList">Refresh</button>
+    <p>last refreshed on {{refreshedtime}}</p>
   </form> 
   <table style="width:100%">
     <tr>
