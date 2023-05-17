@@ -35,6 +35,14 @@ def playerByPUUID(puuid):
     else:
         return player
     
+def searchPlayerStuff(id):
+    try:
+        player= watcher.league.by_summoner(my_region,id)[0]
+    except:
+        return False
+    else:
+        return player
+    
 def getProfilePicture(player):
     iconVerNum=str(version.get('n').get('profileicon'))
     profIconNum=str(dict(player).get('profileIconId'))
@@ -59,3 +67,4 @@ def matchTime(match):
 def matchVersion(match):
     return match.get('game_version')
 
+#print(searchPlayerStuff((getPlayer('prestivent').get('id'))))

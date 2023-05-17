@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import redirect
-from .withriotapi import getChallengerPlayers, getPlayer, getMatches, getProfilePicture
-import requests
+from .withriotapi import getPlayer, getProfilePicture
+from .reloadmatches import fillDb
+import threading
 
 def index(request):
     return HttpResponse("N/A")
@@ -16,10 +17,8 @@ def players_by_api(request, player):
         return HttpResponse(f'not a person')
     contestant=(getPlayer(player))
     profpic=(getProfilePicture(contestant))
-    playerMatches=getMatches(contestant)
     
-
-
+    
     playername={"player": contestant.get('name'), "profpic": profpic}
     return render(request, 'topplayers/player.html',playername)
 # Create your views here.
