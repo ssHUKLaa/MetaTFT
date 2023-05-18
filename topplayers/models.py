@@ -8,11 +8,18 @@ class searchPlayers(models.Model):
     
 class Matches(models.Model):
     otherParticipants = models.CharField(max_length=200, default='')
-    traits = models.CharField(max_length=200, default='') #will have to delineate with commas
     placement = models.IntegerField(default=0)
     game_time = models.CharField(max_length=20, default='')
+    game_length = models.CharField(max_length=20, default='')
 
     searchedPlayer= models.ForeignKey(searchPlayers, on_delete=models.CASCADE,default=None)
+
+class Traits(models.Model):
+    traitname = models.CharField(max_length=100, default='')
+    currenttier = models.IntegerField(default=0)
+    tierunits = models.IntegerField(default=0)
+
+    associatedMatch = models.ForeignKey(Matches,on_delete=models.CASCADE,default=None)
 
 class Champions(models.Model):
     Name = models.CharField(max_length=20, default='')

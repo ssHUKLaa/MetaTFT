@@ -1,7 +1,7 @@
 from riotwatcher import TftWatcher, ApiError, LolWatcher
 from datetime import datetime
 from django.utils import timezone
-apikey='RGAPI-f85ecebf-c935-4d28-9e76-aa3beb9592ee'
+apikey='RGAPI-9685cb08-5adb-44bd-8c18-9ee3cc437e37'
 watcher= TftWatcher(apikey)
 lolwatcher= LolWatcher(apikey)
 my_region = 'na1'
@@ -43,6 +43,14 @@ def searchPlayerStuff(id):
     else:
         return player
     
+def nameByPUUID(puuid):
+    try:
+        name = watcher.summoner.by_puuid(my_region,puuid)
+    except:
+        return False
+    else:
+        return name
+    
 def getProfilePicture(player):
     iconVerNum=str(version.get('n').get('profileicon'))
     profIconNum=str(dict(player).get('profileIconId'))
@@ -67,4 +75,5 @@ def matchTime(match):
 def matchVersion(match):
     return match.get('game_version')
 
-#print(searchPlayerStuff((getPlayer('prestivent').get('id'))))
+#print(searchPlayerStuff((getPlayer('DestroyernV').get('id'))))
+print((((((getMatch(getMatches(getPlayer('DestroyernV')),0)).get('info')).get('participants'))[0])).get('time_eliminated'))
