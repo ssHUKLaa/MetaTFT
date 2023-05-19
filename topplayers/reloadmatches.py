@@ -15,7 +15,7 @@ def fillDb(player):
     b=searchPlayers()
     b.name=(player.get('name'))
     b.playerId=(player.get('id'))
-    b.LP=-1
+    b.LP=x.get('leaguePoints')
     b.add_date=timezone.now()
     b.save()
 
@@ -24,7 +24,6 @@ def fillDb(player):
     while inc<(len(allMatches)):
         tes = getMatch(allMatches,inc)
         
-        woww = Traits()
         listofpl = ((tes.get('metadata').get('participants')))
         plnames = []
         
@@ -42,6 +41,7 @@ def fillDb(player):
             inc2+=1
 
         swag = Matches()
+        swag.matchID=allMatches[inc]
         swag.otherParticipants = names
         swag.placement = (lamo[inc2]).get('placement')
         swag.game_length = (lamo[inc2]).get('time_eliminated')
@@ -52,6 +52,7 @@ def fillDb(player):
         traitlist=lamo[inc2].get('traits')
         for trait in traitlist:
             weow = Traits()
+            weow.matchID = allMatches[inc]
             weow.traitname = trait.get('name')
             weow.currenttier = trait.get('tier_current')
             weow.tierunits = trait.get('num_units')
@@ -61,10 +62,12 @@ def fillDb(player):
         unitlist = lamo[inc2].get('units')
         for unit in unitlist:
             loll = Champions()
+            loll.matchID = allMatches[inc]
             loll.Name = unit.get('character_id')
             loll.Star = unit.get('tier')
             loll.Items = ','.join(unit.get('itemNames'))
             loll.Rarity = unit.get('rarity')
             loll.associatedMatch = swag
+            loll.save()
 
         inc+=1
