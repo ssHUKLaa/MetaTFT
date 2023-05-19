@@ -68,5 +68,3 @@ def fillDb(player):
             loll.associatedMatch = swag
 
         inc+=1
-
-
