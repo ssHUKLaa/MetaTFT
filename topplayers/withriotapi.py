@@ -76,4 +76,4 @@ def matchVersion(match):
     return match.get('game_version')
 
 #print(searchPlayerStuff((getPlayer('DestroyernV').get('id'))))
-print((((((getMatch(getMatches(getPlayer('DestroyernV')),0)).get('info')).get('participants'))[0])).get('time_eliminated'))
+print(((((((getMatch(getMatches(getPlayer('DestroyernV')),0)).get('info')).get('participants'))[0])).get('units'))[0])

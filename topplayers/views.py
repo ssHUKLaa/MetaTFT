@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from .withriotapi import getPlayer, getProfilePicture
-from .reloadmatches import fillDb
+#from .reloadmatches import fillDb
 import threading
 
 def index(request):

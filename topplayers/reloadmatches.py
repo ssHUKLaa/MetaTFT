@@ -20,7 +20,6 @@ def fillDb(player):
     b.add_date=timezone.now()
     b.save()
 
-    playerMatches= []
     inc=0
     allMatches=getMatches(player)
     while inc<(len(allMatches)):
@@ -51,7 +50,24 @@ def fillDb(player):
         swag.searchedPlayer = b
         swag.save()
 
+        traitlist=lamo[inc2].get('traits')
+        for trait in traitlist:
+            weow = Traits()
+            weow.traitname = trait.get('name')
+            weow.currenttier = trait.get('tier_current')
+            weow.tierunits = trait.get('num_units')
+            weow.associatedMatch = swag
+            weow.save()
         
+        unitlist = lamo[inc2].get('units')
+        for unit in unitlist:
+            loll = Champions()
+            loll.Name = unit.get('character_id')
+            loll.Star = unit.get('tier')
+            loll.Items = ','.join(unit.get('itemNames'))
+            loll.Rarity = unit.get('rarity')
+            loll.associatedMatch = swag
+
         inc+=1
 
 
