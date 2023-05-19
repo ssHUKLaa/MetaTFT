@@ -3,7 +3,6 @@ from django.utils import timezone
 from .withriotapi import searchPlayerStuff, getMatches, getMatch, nameByPUUID
 
 def fillDb(player):
-    time=timezone.now()
 
     x = searchPlayerStuff(player.get('id'))
     if (x==False):
