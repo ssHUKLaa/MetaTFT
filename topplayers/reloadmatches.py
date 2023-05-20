@@ -50,24 +50,28 @@ def fillDb(player):
         swag.save()
 
         traitlist=lamo[inc2].get('traits')
+        inctrait=0
         for trait in traitlist:
             weow = Traits()
-            weow.matchID = allMatches[inc]
+            weow.matchID = allMatches[inc]+(','+str(inctrait))
             weow.traitname = trait.get('name')
             weow.currenttier = trait.get('tier_current')
             weow.tierunits = trait.get('num_units')
             weow.associatedMatch = swag
             weow.save()
+            inctrait+=1
         
         unitlist = lamo[inc2].get('units')
+        incchamps=0
         for unit in unitlist:
             loll = Champions()
-            loll.matchID = allMatches[inc]
+            loll.matchID = allMatches[inc]+(','+str(incchamps))
             loll.Name = unit.get('character_id')
             loll.Star = unit.get('tier')
             loll.Items = ','.join(unit.get('itemNames'))
             loll.Rarity = unit.get('rarity')
             loll.associatedMatch = swag
             loll.save()
+            incchamps+=1
 
         inc+=1
