@@ -13,9 +13,9 @@ def players_by_api(request, player):
         summoner_name = request.POST['inp_number']
         #players:player refers to topplayers/urls.py where app_name=players
         return redirect('players:player',player=summoner_name)
-    if (getPlayer(player)==False):
-        return HttpResponse(f'not a person')
     contestant=(getPlayer(player))
+    if (contestant==False):
+        return HttpResponse(f'not a person')
     profpic=(getProfilePicture(contestant))
     fillDb(contestant)
     

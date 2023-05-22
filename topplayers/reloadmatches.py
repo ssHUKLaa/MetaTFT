@@ -5,16 +5,19 @@ from .withriotapi import searchPlayerStuff, getMatches, getMatch, nameByPUUID
 def fillDb(player):
 
     x = searchPlayerStuff(player.get('id'))
+    count=(((searchPlayers.objects.filter(name=player.get('name'))).count()))
+    if count>0:
+        return None
     if (x==False):
         b=searchPlayers()
         b.name=(player.get('name'))
-        b.playerId=(player.get('id'))
+        b.id=(player.get('id'))
         b.LP=-1
         b.add_date=timezone.now()
         b.save()
     b=searchPlayers()
     b.name=(player.get('name'))
-    b.playerId=(player.get('id'))
+    b.id=(player.get('id'))
     b.LP=x.get('leaguePoints')
     b.add_date=timezone.now()
     b.save()
@@ -41,7 +44,7 @@ def fillDb(player):
             inc2+=1
 
         swag = Matches()
-        swag.matchID=allMatches[inc]
+        swag.id=allMatches[inc]
         swag.otherParticipants = names
         swag.placement = (lamo[inc2]).get('placement')
         swag.game_length = (lamo[inc2]).get('time_eliminated')
@@ -53,7 +56,7 @@ def fillDb(player):
         inctrait=0
         for trait in traitlist:
             weow = Traits()
-            weow.matchID = allMatches[inc]+(','+str(inctrait))
+            weow.id = allMatches[inc]+(','+str(inctrait))
             weow.traitname = trait.get('name')
             weow.currenttier = trait.get('tier_current')
             weow.tierunits = trait.get('num_units')
@@ -65,7 +68,7 @@ def fillDb(player):
         incchamps=0
         for unit in unitlist:
             loll = Champions()
-            loll.matchID = allMatches[inc]+(','+str(incchamps))
+            loll.id = allMatches[inc]+(','+str(incchamps))
             loll.Name = unit.get('character_id')
             loll.Star = unit.get('tier')
             loll.Items = ','.join(unit.get('itemNames'))
@@ -75,3 +78,4 @@ def fillDb(player):
             incchamps+=1
 
         inc+=1
+
