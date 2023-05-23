@@ -17,7 +17,7 @@ def players_by_api(request, player):
     if (contestant==False):
         return HttpResponse(f'not a person')
     profpic=(getProfilePicture(contestant))
-    fillDb(contestant)
+    hold=fillDb(contestant)
     
     playername={"player": contestant.get('name'), "profpic": profpic}
     return render(request, 'topplayers/player.html',playername)
