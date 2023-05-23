@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from . import rebestplayer
+from topplayers.reloadmatches import deleveryweek
 import threading
 
 
@@ -10,6 +11,8 @@ def index(request):
         summoner_name = request.POST['inp_number']
         #players:player refers to topplayers/urls.py where app_name=players
         return redirect('players:player',player=summoner_name)
+    removedb=threading.Thread(target=deleveryweek)
+    removedb.start()
     return render(request, 'index.html')
 
 def topplayers(request):

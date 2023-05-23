@@ -10,7 +10,6 @@ def fillDb(player):
         time=(ss.values()[0].get('add_date'))
         nowtime=timezone.now()
         diff=((nowtime-time))
-        print(diff.seconds//3600)
         if (((diff.seconds//3600))<5):
             return None
         
@@ -84,3 +83,10 @@ def fillDb(player):
             incchamps+=1
 
         inc+=1
+
+def deleveryweek():
+    for swag in searchPlayers.objects.all():
+        timeadded=swag.add_date
+        if (((timezone.now()-timeadded).days)>=7):
+            swag.delete()
+        

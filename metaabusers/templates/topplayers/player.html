@@ -13,13 +13,15 @@
     <div class="header">
         <form class ='Search' action={% url 'index'%} method="POST" >
             {% csrf_token %}
-            <p class='Same'><input type="submit" value="Submit"/></p>      
+            <p class='Same'><input type="submit" name="searchPl"value="Submit"/></p>      
             <p class='Same'><input type="text" name="inp_number" placeholder="summoner name"/></p>        
         </form>
         <h1 class='playername'>{{player}}</h1>
         <img class='Profilepic' src="{{profpic}}" style="width: 15%; height: 15%;" alt="{{profpic}}">
     </div>
-    
-    <p>{{tes}}</p>
+    <form class='RefreshSearch' method="POST"> 
+        {% csrf_token %}
+        <button type="submit" name="Refresh" value="RefreshList">Refresh</button>
+    </form>
 </body>
 </html>
