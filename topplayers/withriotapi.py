@@ -1,11 +1,13 @@
 from riotwatcher import TftWatcher, ApiError, LolWatcher
 from datetime import datetime
 from django.utils import timezone
-apikey='RGAPI-137d23c6-e719-4195-bc17-3afa952d9a59'
+import requests
+apikey='RGAPI-a08763f3-f890-493e-b6b2-40ffc8076a16'
 watcher= TftWatcher(apikey)
 lolwatcher= LolWatcher(apikey)
 my_region = 'na1'
 version=lolwatcher.data_dragon.versions_for_region(my_region)
+
 
 def getChallengerPlayers():
     
@@ -58,7 +60,7 @@ def getProfilePicture(player):
     return (f'https://ddragon.leagueoflegends.com/cdn/{iconVerNum}/img/profileicon/{imgFileName}')
 
 def getMatches(player):
-    matches=watcher.match.by_puuid(my_region,player.get('puuid'))
+    matches=watcher.match.by_puuid(my_region,player.get('puuid'),10)
     return matches
 
 def getMatch(matches, index):
@@ -77,5 +79,11 @@ def matchVersion(match):
 
 #print(searchPlayerStuff((getPlayer('prestivent').get('id'))))
 #print(((((((getMatch(getMatches(getPlayer('DestroyernV')),0)).get('info')).get('participants'))[0])).get('units'))[0])
-#print(searchPlayerStuff(getPlayer('prestivent').get('id')))
-print(getPlayer('prestivent'))
+#print((getPlayer('prestivent')).get('id'))
+#print(getPlayer('prestivent'))
+''' for icons
+tes = requests.get('https://raw.communitydragon.org/latest/cdragon/tft/en_us.json')
+tex = tes.json()
+print(((tex.get('setData')[2]).get('champions'))[0])
+'''
+print(getMatches(getPlayer('Destroyernv')))

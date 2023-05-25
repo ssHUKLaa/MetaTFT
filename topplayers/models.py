@@ -3,6 +3,7 @@ from django.db import models
 class searchPlayers(models.Model):
     name = models.CharField(max_length=200,default='')
     id = models.CharField(max_length=200,primary_key=True)
+    tier = models.CharField(max_length=200,default='')
     LP = models.IntegerField(default=0)
     add_date = models.DateTimeField('date')
     

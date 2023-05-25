@@ -17,12 +17,14 @@ def fillDb(player):
         b=searchPlayers()
         b.name=(player.get('name'))
         b.id=(player.get('id'))
+        b.tier='N/A'
         b.LP=-1
         b.add_date=timezone.now()
         b.save()
     b=searchPlayers()
     b.name=(player.get('name'))
     b.id=(player.get('id'))
+    b.tier=(x.get('tier'))+" "+x.get('rank')
     b.LP=x.get('leaguePoints')
     b.add_date=timezone.now()
     b.save()
@@ -90,3 +92,54 @@ def deleveryweek():
         if (((timezone.now()-timeadded).days)>=7):
             swag.delete()
         
+def playerStats(player):
+    x = searchPlayerStuff(player.get('id'))
+    dictofstats={'playername':player.get('name'), 'tier':(x.get('tier'))+" "+x.get('rank'), 'LP':x.get('leaguePoints'),'dateofadd':timezone.now()}
+    return dictofstats
+
+def matchesfordisp(player):
+    allMatches=getMatches(player)
+    inc=0
+    matchlist=[]
+    while inc<(len(allMatches)):
+        tes = getMatch(allMatches,inc)
+
+        listofpl = ((tes.get('metadata').get('participants')))
+        plnames = []
+        
+        for puuid in listofpl:
+            plnames.append(nameByPUUID(puuid))
+        
+        playerpuuid=(player.get('puuid'))
+        lamo = ((tes.get('info')).get('participants'))
+
+        inc2 = 0
+        for eachpl in lamo:
+            if (playerpuuid==(eachpl.get('puuid'))):
+                break
+            inc2+=1
+
+        traitlist=lamo[inc2].get('traits')
+        traits=[]
+        for trait in traitlist:
+            traitdict={'name':trait.get('name'),'tier':trait.get('tier_current'),'numUnits':trait.get('num_units')}
+            traits.append(traitdict)
+        
+        unitlist = lamo[inc2].get('units')
+        champs=[]
+        for unit in unitlist:
+            champdict={'name':unit.get('character_id'),'Star':unit.get('tier'),'Items':unit.get('itemNames'),'Rarity':unit.get('rarity')}
+            champs.append(champdict)
+
+        matchdict={'id':allMatches[inc],
+                   'otherparticipants':plnames,
+                   'placement':(lamo[inc2]).get('placement'),
+                   'game_time':timezone.now(),
+                   'game_length':(lamo[inc2]).get('time_eliminated'), 
+                   'traits':traits,
+                   'champions':champs
+                   }
+        matchlist.append(matchdict)
+        inc+=1
+    return matchlist
+    

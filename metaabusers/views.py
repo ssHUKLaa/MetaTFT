@@ -42,7 +42,4 @@ def topplayers(request):
     players = {'toplayers':representedlist, 'refreshedtime':refreshed}
     return render(request, 'bestplayers.html', players)
 
-
-
-
 # Create your views here.
