@@ -2,7 +2,7 @@ from riotwatcher import TftWatcher, ApiError, LolWatcher
 from datetime import datetime
 from django.utils import timezone
 import requests
-apikey='RGAPI-121fba38-d231-4158-a0c7-a1f8f2f6a4cf'
+apikey='RGAPI-75d04156-5587-4a1e-a3cb-4c8364d93917'
 watcher= TftWatcher(apikey)
 lolwatcher= LolWatcher(apikey)
 my_region = 'na1'
@@ -58,6 +58,10 @@ def getProfilePicture(player):
     profIconNum=str(dict(player).get('profileIconId'))
     imgFileName=(((((lolwatcher.data_dragon.profile_icons(iconVerNum)).get('data')).get(profIconNum))).get('image')).get('full')
     return (f'https://ddragon.leagueoflegends.com/cdn/{iconVerNum}/img/profileicon/{imgFileName}')
+
+def rankIcon(rank):
+    tiername=((rank.split())[0]).lower()
+    return (f'https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/ranked-mini-crests/{tiername}.png')
 
 def getMatches(player):
     matches=watcher.match.by_puuid(my_region,player.get('puuid'),10)

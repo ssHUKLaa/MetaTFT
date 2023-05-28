@@ -16,13 +16,17 @@
             <p class='Same'><input type="submit" name="searchPl"value="Submit"/></p>      
             <p class='Same'><input type="text" name="inp_number" placeholder="summoner name"/></p>        
         </form>
-        <img class='Profilepic' src="{{profpic}}" style="width: 10%; height: 10%;" alt="{{profpic}}">
         <h1 class='playername'>{{player}}</h1>
-        <h1 class="rank">{{ stats.tier }}</h1>
+        <img class='Profilepic' src="{{profpic}}" style="width: 10%; height: 10%;" alt="{{profpic}}">
     </div>
-    <form class='RefreshSearch' method="POST"> 
-        {% csrf_token %}
-        <button type="submit" name="Refresh" value="RefreshList">Refresh</button>
-    </form>
+    <div class="playerstats">
+        <h1 class="rank">{{ stats.tier }}</h1>
+        <img class="rankicon" src="{{ rankicon }}" style="width: 10%; height: 10%;" alt="{{ rankicon }}">
+        <form class='RefreshSearch' method="POST"> 
+            {% csrf_token %}
+            <button type="submit" name="Refresh" value="RefreshList">Refresh</button>
+        </form>
+    </div>
+        
 </body>
 </html>

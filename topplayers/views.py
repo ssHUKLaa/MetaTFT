@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import redirect
-from .withriotapi import getPlayer, getProfilePicture
+from .withriotapi import getPlayer, getProfilePicture, rankIcon
 from .reloadmatches import fillDb, playerStats, matchesfordisp
 from .models import searchPlayers, Matches, Champions, Traits
 import threading
@@ -29,7 +29,7 @@ def players_by_api(request, player):
         return HttpResponse(f'not a person')
     profpic=(getProfilePicture(contestant))
     count=(((searchPlayers.objects.filter(name=contestant.get('name'))).count()))
-
+    
     statsdict=None
     if ((count>0) and (playerstats==None)):
         playerbyid=(searchPlayers.objects.filter(id=contestant.get('id')).first())
@@ -51,13 +51,17 @@ def players_by_api(request, player):
             matchdict= {'placement':match.placement, 'participants':participants,'game_time':match.game_time,'game_length':match.game_length, 'champions':champlist, 'traits':traitlist}
 
             playermatches.append(matchdict)
+    elif (playerstats==None):
+        playerstats=playerStats(contestant)
             
     statsdisp=playerstats
     matchesdisp=initdispmatches
     if (playerstats==None):
         statsdisp=statsdict
         matchesdisp=playermatches
+        
+    icon=(rankIcon(statsdisp.get('tier')))
 
-    playername={"player": contestant.get('name'), "profpic": profpic,"stats":statsdisp,"matches":matchesdisp}
+    playername={"player": contestant.get('name'), "profpic": profpic,"stats":statsdisp,"matches":matchesdisp, "rankicon": icon}
     return render(request, 'topplayers/player.html',playername)
 # Create your views here.
