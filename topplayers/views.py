@@ -59,8 +59,9 @@ def players_by_api(request, player):
     if (playerstats==None):
         statsdisp=statsdict
         matchesdisp=playermatches
-        
-    icon=(rankIcon(statsdisp.get('tier')))
+    icon=(rankIcon('unranked I'))
+    if (statsdisp.get('tier')!='N/A'):
+        icon=(rankIcon(statsdisp.get('tier')))
 
     playername={"player": contestant.get('name'), "profpic": profpic,"stats":statsdisp,"matches":matchesdisp, "rankicon": icon}
     return render(request, 'topplayers/player.html',playername)
