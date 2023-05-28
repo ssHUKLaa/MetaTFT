@@ -12,14 +12,18 @@
     {
     margin: 0px;
     position: sticky;
-    padding: 10px;
-    background: #0f7cd6;
+    padding: 1px;
+    margin: 0;
+    background: #000000;
     color: white;
     font-size: 10px;
-    
+    border: 20px groove #000000;
     }
     .playername
     {
+
+        position: right;
+        color: white;
         font-size: 30px;
     }
     .Same{
@@ -28,12 +32,15 @@
         margin-bottom: 1px;
         
     }
-    .Search + h1{
-        margin-top: -5px;
-        margin-bottom: 1px;
+    .Profilepic {
+        position: relative;
+        border-radius: 50%;
     }
-    h1 + .Profilepic {
-        margin-bottom: -1px;
+    .rank {
+        position: absolute;
+        left: 150px;
+        top: 20%;
+        transform: translateY(-50%);
     }
 h1 {
     color: #000000;

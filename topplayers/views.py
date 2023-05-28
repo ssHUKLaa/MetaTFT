@@ -18,9 +18,8 @@ def players_by_api(request, player):
         if 'Refresh' in request.POST:
             playerstats=playerStats(contestant)
             initdispmatches= matchesfordisp(contestant)
-            filldbsep=threading.Thread(target=fillDb(contestant))
-            filldbsep.start()
-
+            tes=threading.Thread(target=fillDb,args=(playerstats,initdispmatches))
+            tes.start()
         elif 'searchPl' in request.POST:
             summoner_name = request.POST['inp_number']
             #players:player refers to topplayers/urls.py where app_name=players
@@ -38,7 +37,7 @@ def players_by_api(request, player):
 
         matches=Matches.objects.filter(searchedPlayer=contestant.get('id'))
         for match in matches:
-            particpants=((match.otherParticipants).split(','))
+            participants=((match.otherParticipants).split(','))
             champlist=[]
             traitlist=[]
             for champion in Champions.objects.filter(associatedMatch=match.id):
@@ -46,10 +45,10 @@ def players_by_api(request, player):
                 champinfo={'dispindex':(champion.id)[len(champion.id)-1],'Items':Items,'Name':champion.Name,'Star':champion.Star, 'Rarity':champion.Rarity+1}
                 champlist.append(champinfo)
             for trait in Traits.objects.filter(associatedMatch=match.id):
-                traitinfo={'dispindex':(trait.id)[len(champion)-1],'Name':trait.Name, 'numUnits':trait.tierunits}
+                traitinfo={'dispindex':(trait.id)[len(trait.id)-1],'Name':trait.traitname, 'numUnits':trait.tierunits}
                 traitlist.append(traitinfo)
 
-            matchdict= {'placement':match.placement, 'participants':particpants,'timeofgame':match.game_time,'lengthofgame':match.game_length, 'Champions':champlist, 'Traits':traitlist}
+            matchdict= {'placement':match.placement, 'participants':participants,'game_time':match.game_time,'game_length':match.game_length, 'champions':champlist, 'traits':traitlist}
 
             playermatches.append(matchdict)
             
@@ -58,7 +57,7 @@ def players_by_api(request, player):
     if (playerstats==None):
         statsdisp=statsdict
         matchesdisp=playermatches
-    
-    playername={"player": contestant.get('name'), "profpic": profpic, "stats":statsdisp,"matches":matchesdisp}
+
+    playername={"player": contestant.get('name'), "profpic": profpic,"stats":statsdisp,"matches":matchesdisp}
     return render(request, 'topplayers/player.html',playername)
 # Create your views here.

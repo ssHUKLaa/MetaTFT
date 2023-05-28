@@ -2,89 +2,60 @@ from .models import Matches, searchPlayers, Champions, Traits
 from django.utils import timezone
 from .withriotapi import searchPlayerStuff, getMatches, getMatch, nameByPUUID
 
-def fillDb(player):
-    x = searchPlayerStuff(player.get('id'))
-    count=(((searchPlayers.objects.filter(name=player.get('name'))).count()))
+def fillDb(player,matches):
+
+    count=(((searchPlayers.objects.filter(name=player.get('playername'))).count()))
     if count>0:
-        ss=(searchPlayers.objects.filter(name=player.get('name')))
+        ss=(searchPlayers.objects.filter(name=player.get('playername')))
         time=(ss.values()[0].get('add_date'))
         nowtime=timezone.now()
         diff=((nowtime-time))
         if (((diff.seconds//3600))<5):
             return None
         
-    if ((x==False)):
-        b=searchPlayers()
-        b.name=(player.get('name'))
-        b.id=(player.get('id'))
-        b.tier='N/A'
-        b.LP=-1
-        b.add_date=timezone.now()
-        b.save()
     b=searchPlayers()
-    b.name=(player.get('name'))
+    b.name=(player.get('playername'))
     b.id=(player.get('id'))
-    b.tier=(x.get('tier'))+" "+x.get('rank')
-    b.LP=x.get('leaguePoints')
-    b.add_date=timezone.now()
+    b.tier=player.get('tier')
+    b.LP=player.get('LP')
+    b.add_date=player.get('dateadded')
     b.save()
 
-    inc=0
-    allMatches=getMatches(player)
-    while inc<(len(allMatches)):
-        tes = getMatch(allMatches,inc)
-        
-        listofpl = ((tes.get('metadata').get('participants')))
-        plnames = []
-        
-        for puuid in listofpl:
-            plnames.append(nameByPUUID(puuid))
-        names= ','.join(plnames)
-        
-        playerpuuid=(player.get('puuid'))
-        lamo = ((tes.get('info')).get('participants'))
-
-        inc2 = 0
-        for eachpl in lamo:
-            if (playerpuuid==(eachpl.get('puuid'))):
-                break
-            inc2+=1
+    for eachmatch in matches:
 
         swag = Matches()
-        swag.id=allMatches[inc]
-        swag.otherParticipants = names
-        swag.placement = (lamo[inc2]).get('placement')
-        swag.game_length = (lamo[inc2]).get('time_eliminated')
-        swag.game_time = timezone.now()
+        swag.id=eachmatch.get('id')
+        swag.otherParticipants = eachmatch.get('otherparticipants')
+        swag.placement = eachmatch.get('placement')
+        swag.game_length = eachmatch.get('game_length')
+        swag.game_time = eachmatch.get('game_time')
         swag.searchedPlayer = b
         swag.save()
 
-        traitlist=lamo[inc2].get('traits')
+        traitlist=eachmatch.get('traits')
         inctrait=0
         for trait in traitlist:
             weow = Traits()
-            weow.id = allMatches[inc]+(','+str(inctrait))
+            weow.id = eachmatch.get('id')+(','+str(inctrait))
             weow.traitname = trait.get('name')
-            weow.currenttier = trait.get('tier_current')
-            weow.tierunits = trait.get('num_units')
+            weow.currenttier = trait.get('tier')
+            weow.tierunits = trait.get('numUnits')
             weow.associatedMatch = swag
             weow.save()
             inctrait+=1
         
-        unitlist = lamo[inc2].get('units')
+        unitlist = eachmatch.get('champions')
         incchamps=0
         for unit in unitlist:
             loll = Champions()
-            loll.id = allMatches[inc]+(','+str(incchamps))
-            loll.Name = unit.get('character_id')
-            loll.Star = unit.get('tier')
-            loll.Items = ','.join(unit.get('itemNames'))
-            loll.Rarity = unit.get('rarity')
+            loll.id = eachmatch.get('id')+(','+str(incchamps))
+            loll.Name = unit.get('name')
+            loll.Star = unit.get('Star')
+            loll.Items = ','.join(unit.get('Items'))
+            loll.Rarity = unit.get('Rarity')
             loll.associatedMatch = swag
             loll.save()
             incchamps+=1
-
-        inc+=1
 
 def deleveryweek():
     for swag in searchPlayers.objects.all():
@@ -94,7 +65,10 @@ def deleveryweek():
         
 def playerStats(player):
     x = searchPlayerStuff(player.get('id'))
-    dictofstats={'playername':player.get('name'), 'tier':(x.get('tier'))+" "+x.get('rank'), 'LP':x.get('leaguePoints'),'dateofadd':timezone.now()}
+    if (x==False):
+        dictofstats={'playername':player.get('name'), 'tier':'N/A', 'LP':-1,'dateadded':timezone.now(), 'id':player.get('id')}
+        return dictofstats
+    dictofstats={'playername':player.get('name'), 'tier':(x.get('tier'))+" "+x.get('rank'), 'LP':x.get('leaguePoints'),'dateadded':timezone.now(), 'id':player.get('id')}
     return dictofstats
 
 def matchesfordisp(player):
