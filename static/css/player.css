@@ -21,7 +21,6 @@
     }
     .playername
     {
-
         position: right;
         color: white;
         font-size: 30px;
@@ -45,14 +44,24 @@
     }
 .playerstats {
     margin: 0px;
-    position: sticky;
-    padding: 10px;
     margin: 0;
     background: #ccc5c5;
     color: white;
     font-size: 10px;
+    width: 30%;
+    height: 50%;
     border: 5px groove #ccc5c5;
-}
+    }
+    .LP {
+        float: right;
+        position: relative;
+        margin-top: -35.5px;
+        margin-right: 15px;
+    }
+    .RefreshSearch {
+        float: right;
+        margin-right: 30px;
+    }
 h1 {
     color: #ffffff;
 }
