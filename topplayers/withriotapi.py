@@ -2,7 +2,7 @@ from riotwatcher import TftWatcher, ApiError, LolWatcher
 from datetime import datetime
 from django.utils import timezone
 import requests
-apikey='RGAPI-9685fbbe-e171-468f-a427-2f151fcd6bb3'
+apikey='RGAPI-41932222-2903-46fd-aeb1-0fd790dd95d7'
 watcher= TftWatcher(apikey)
 lolwatcher= LolWatcher(apikey)
 my_region = 'na1'
