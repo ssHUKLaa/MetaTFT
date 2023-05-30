@@ -43,13 +43,14 @@
         margin-bottom: -1px;
     }
 .playerstats {
+    float:left;
     margin: 0px;
     background: #ccc5c5;
     color: white;
     font-size: 10px;
-    width: 300px;
+    width: 40%;
     height: 160px;
-    border: 5px groove #ccc5c5;
+    outline: groove #000000;
     }
     .LP {
         float: right;
@@ -59,6 +60,16 @@
         float: right;
         
     }
+.tes {
+    float: right;
+    display: flex;
+    background: #ccc5c5;
+    color: white;
+    font-size: 10px;
+    width: 60%;
+    height: 160px;
+    outline: groove #000000;
+}
 h1 {
     color: #ffffff;
 }
