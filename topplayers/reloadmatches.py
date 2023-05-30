@@ -125,4 +125,3 @@ def matchesfordisp(player):
                 matchlist.append(match)
     
     return matchlist
-    
