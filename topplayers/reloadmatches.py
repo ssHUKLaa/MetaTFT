@@ -5,16 +5,17 @@ from .withriotapi import searchPlayerStuff, getMatches, getMatch, nameByPUUID
 def fillDb(player,matches):
 
     count=(((searchPlayers.objects.filter(name=player.get('playername'))).count()))
-    '''
+
     if count>0:
         ss=(searchPlayers.objects.filter(name=player.get('playername')))
         time=(ss.values()[0].get('add_date'))
         nowtime=timezone.now()
         diff=((nowtime-time))
-        print(diff.seconds//3600)
+        if ((diff.days)>=1):
+            diff=(diff.days)*86400
         if ((((diff.seconds//3600))<5)):
             return None
-    '''
+    
         
     b=searchPlayers()
     b.name=(player.get('playername'))

@@ -62,7 +62,7 @@ def players_by_api(request, player):
     icon=(rankIcon('unranked I'))
     if (statsdisp.get('tier')!='N/A'):
         icon=(rankIcon(statsdisp.get('tier')))
-    print(statsdisp)
+    
     playername={"player": contestant.get('name'), "profpic": profpic,"stats":statsdisp,"matches":matchesdisp, "rankicon": icon}
     return render(request, 'topplayers/player.html',playername)
 # Create your views here.
