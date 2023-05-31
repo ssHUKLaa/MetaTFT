@@ -17,7 +17,6 @@ def fillDb(player,matches):
         if ((((diff.seconds//3600))<5)):
             return None
     
-        
     b=searchPlayers()
     b.name=(player.get('playername'))
     b.id=(player.get('id'))
