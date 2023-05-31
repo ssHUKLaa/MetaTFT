@@ -82,10 +82,18 @@
     }
     .matchholder {
         height: 100px;
+        width : 100%;
+        
+        }
+        .matchstats {
+            float: left;
+            width: 70%;
+            
         }
         .participants {
+            float: left;
             width: 30%;
-            outline: groove #000000;
+
         }
     
 h1 {
