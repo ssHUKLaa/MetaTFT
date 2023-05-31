@@ -70,6 +70,24 @@
     height: 160px;
     outline: groove #000000;
 }
+.matchesholder {
+    float: right;
+    display: flex;
+    background: #ccc5c5;
+    color: white;
+    font-size: 10px;
+    width: 60%;
+    height: 800px;
+    outline: groove #000000;
+    }
+    .matchholder {
+        height: 100px;
+        }
+        .participants {
+            width: 30%;
+            outline: groove #000000;
+        }
+    
 h1 {
     color: #ffffff;
 }
