@@ -72,28 +72,28 @@
 }
 .matchesholder {
     float: right;
-    display: flex;
+    display: grid;
     background: #ccc5c5;
     color: white;
     font-size: 10px;
     width: 60%;
-    height: 800px;
     outline: groove #000000;
     }
     .matchholder {
         height: 100px;
-        width : 100%;
-        
+        width: 100%;
+        outline: groove #000000;
+        display: flex;
         }
         .matchstats {
             float: left;
             width: 70%;
-            
+            outline: groove #000000;
         }
         .participants {
             float: left;
             width: 30%;
-
+            outline: groove #000000;
         }
     
 h1 {
