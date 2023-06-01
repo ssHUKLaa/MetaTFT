@@ -45,7 +45,8 @@
             </div>
             <div class="participants">
                 {% for participant in match.participants %}
-                    {{participant}}
+                    <li class="name"><a  href="/players/{{participant}}">{{participant}}</a></li>
+
                 {% endfor %}
             </div>
             

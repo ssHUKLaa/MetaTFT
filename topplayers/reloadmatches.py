@@ -29,7 +29,7 @@ def fillDb(player,matches):
 
         swag = Matches()
         swag.id=eachmatch.get('id')
-        swag.otherParticipants = eachmatch.get('otherparticipants')
+        swag.otherParticipants = ','.join(eachmatch.get('otherparticipants'))
         swag.placement = eachmatch.get('placement')
         swag.game_length = eachmatch.get('game_length')
         swag.game_time = eachmatch.get('game_time')
