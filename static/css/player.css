@@ -89,12 +89,29 @@
             float: left;
             width: 70%;
             outline: groove #000000;
-        }
+            display: flex;
+            }
+            .placementhold {
+                width: 30%;
+                outline: groove #000000;
+                vertical-align: top;
+                position: relative;
+                }
+                .placement {
+                    position: absolute;
+                    font-size: 5.0em;
+    
+                }
+            .otherstats {
+                width: 70%;
+                outline: groove #000000;
+            }
         .participants {
             float: left;
             width: 30%;
             outline: groove #000000;
         }
+        
     
 h1 {
     color: #ffffff;

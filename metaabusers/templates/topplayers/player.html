@@ -35,7 +35,13 @@
         {% for match in matches %}
         <div class="matchholder" style="width: 100%;">
             <div class="matchstats">
-                {{match.placement}}
+                <div class="placementhold">
+                    <h1 class="placement">{{match.placement}}</h1>
+                </div>
+                <div class="otherstats">
+                    
+                </div>
+
             </div>
             <div class="participants">
                 {% for participant in match.participants %}
