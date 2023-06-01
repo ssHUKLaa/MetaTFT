@@ -38,7 +38,9 @@
                 
             </div>
             <div class="participants">
-                
+                {% for partici in match.participants %}
+                    {{partici}}
+                {% endfor %}
             </div>
             
         </div>

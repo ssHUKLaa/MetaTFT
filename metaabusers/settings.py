@@ -8,6 +8,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
 import os
 
 
@@ -82,7 +83,7 @@ DATABASES = {
         'NAME': 'Cluster0',
         'ENFORCE_SCHEMA': False,
         'CLIENT': {
-            'host': 'mongodb+srv://new-user:7NUBZ6XqzTxrzDXj@cluster0.mdsp01i.mongodb.net/?retryWrites=true&w=majority'
+            'host': config('dbcon',cast=str)
         }
     }
 }

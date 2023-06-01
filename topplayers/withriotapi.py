@@ -1,8 +1,9 @@
 from riotwatcher import TftWatcher, ApiError, LolWatcher
 from datetime import datetime
 from django.utils import timezone
+from decouple import config
 import requests
-apikey='RGAPI-8924c0f5-b358-4cef-b7f2-ebf4358eb5c7'
+apikey=config('apikey', cast=str)
 watcher= TftWatcher(apikey)
 lolwatcher= LolWatcher(apikey)
 my_region = 'na1'
@@ -82,7 +83,8 @@ def matchVersion(match):
     return match.get('game_version')
 
 #print(searchPlayerStuff((getPlayer('prestivent').get('id'))))
-#print(((((((getMatch(getMatches(getPlayer('DestroyernV')),0)).get('info')).get('participants'))[0])).get('units'))[0])
+#swa=(((getMatch(getMatches(getPlayer('prestivent')),0)).get('metadata')).get('participants'))
+
 #print((getPlayer('prestivent')).get('id'))
 #print(getPlayer('prestivent'))
 ''' for icons
@@ -90,4 +92,4 @@ tes = requests.get('https://raw.communitydragon.org/latest/cdragon/tft/en_us.jso
 tex = tes.json()
 print(((tex.get('setData')[2]).get('champions'))[0])
 '''
-print(getMatches(getPlayer('Destroyernv')))
+#print(getMatches(getPlayer('Destroyernv')))

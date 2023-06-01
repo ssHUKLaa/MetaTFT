@@ -6,7 +6,7 @@ from concurrent.futures import ThreadPoolExecutor
 def fillDb(player,matches):
 
     count=(((searchPlayers.objects.filter(name=player.get('playername'))).count()))
-
+    '''
     if count>0:
         ss=(searchPlayers.objects.filter(name=player.get('playername')))
         time=(ss.values()[0].get('add_date'))
@@ -16,7 +16,7 @@ def fillDb(player,matches):
             diff=(diff.days)*86400
         if ((((diff.seconds//3600))<5)):
             return None
-    
+    '''
     b=searchPlayers()
     b.name=(player.get('playername'))
     b.id=(player.get('id'))
@@ -116,7 +116,7 @@ def matchesfordisp(player):
                    }
         return matchdict
     
-    with ThreadPoolExecutor() as executor:
+    with ThreadPoolExecutor(max_workers=4) as executor:
         futures = [executor.submit(process_match, inc) for inc in range(len(allMatches))]
         for future in futures:
             match = future.result()
