@@ -109,7 +109,7 @@ def matchesfordisp(player):
         matchdict={'id':allMatches[inc],
                    'otherparticipants':plnames,
                    'placement':(lamo[inc2]).get('placement'),
-                   'game_time':timezone.now(),
+                   'game_time':tes.get('game_datetime'),
                    'game_length':(lamo[inc2]).get('time_eliminated'), 
                    'traits':traits,
                    'champions':champs

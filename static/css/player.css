@@ -80,7 +80,7 @@
     outline: groove #000000;
     }
     .matchholder {
-        height: 100px;
+        height: 200px;
         width: 100%;
         outline: groove #000000;
         display: flex;
