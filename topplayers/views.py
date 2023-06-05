@@ -50,7 +50,14 @@ def players_by_api(request, player):
                 traitinfo={'dispindex':(trait.id)[len(trait.id)-1],'Name':trait.traitname, 'numUnits':trait.tierunits}
                 traitlist.append(traitinfo)
 
-            matchdict= {'placement':match.placement, 'participants':participants,'game_time':timezone.now()-(time.strptime(match.game_time, '%a %b %d %H:%M:%S %Y')),'game_length':time.strftime("%M:%S",time.gmtime(float(match.game_length))), 'champions':champlist, 'traits':traitlist}
+
+            matchdict= {'placement':match.placement, 
+                        'otherparticipants':participants,
+                        'game_time':match.game_time,
+                        'game_length':match.game_length, 
+                        'champions':champlist, 
+                        'traits':traitlist
+                        }
 
             playermatches.append(matchdict)
     elif (playerstats==None):

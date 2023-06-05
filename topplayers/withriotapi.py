@@ -1,6 +1,7 @@
 from riotwatcher import TftWatcher, ApiError, LolWatcher
 from datetime import datetime
 from django.utils import timezone
+import datetime
 from decouple import config
 import requests
 apikey=config('apikey', cast=str)
@@ -83,8 +84,8 @@ def matchVersion(match):
     return match.get('game_version')
 
 #print(searchPlayerStuff((getPlayer('prestivent').get('id'))))
-#swa=(((getMatch(getMatches(getPlayer('prestivent')),0)).get('metadata')).get('participants'))
-
+#swa=(((getMatch(getMatches(getPlayer('prestivent')),0)).get('info').keys()))
+#print(swa)
 #print((getPlayer('prestivent')).get('id'))
 #print(getPlayer('prestivent'))
 ''' for icons
@@ -93,3 +94,6 @@ tex = tes.json()
 print(((tex.get('setData')[2]).get('champions'))[0])
 '''
 #print(getMatches(getPlayer('Destroyernv')))
+
+#print(timezone.now()-(timezone.datetime.fromtimestamp((1685408445226/1000), tz=(timezone.get_current_timezone()))))
+#print(timezone.now()-(timezone.datetime.strptime((timezone.datetime.fromtimestamp(1685758149029)), '%Y-%m-%d %H:%M:%S')))

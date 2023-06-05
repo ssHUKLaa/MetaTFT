@@ -2,6 +2,7 @@ from .models import Matches, searchPlayers, Champions, Traits
 from django.utils import timezone
 from .withriotapi import searchPlayerStuff, getMatches, getMatch, nameByPUUID
 from concurrent.futures import ThreadPoolExecutor
+import time
 
 def fillDb(player,matches):
 
@@ -84,7 +85,6 @@ def matchesfordisp(player):
 
         listofpl = ((tes.get('metadata').get('participants')))
         plnames = [nameByPUUID(puuid) for puuid in listofpl]
-        
         playerpuuid=(player.get('puuid'))
         lamo = ((tes.get('info')).get('participants'))
 
@@ -109,14 +109,14 @@ def matchesfordisp(player):
         matchdict={'id':allMatches[inc],
                    'otherparticipants':plnames,
                    'placement':(lamo[inc2]).get('placement'),
-                   'game_time':tes.get('game_datetime'),
-                   'game_length':(lamo[inc2]).get('time_eliminated'), 
+                   'game_time':((str(timezone.now()-(timezone.datetime.fromtimestamp((((tes.get('info')).get('game_datetime'))/1000), tz=(timezone.get_current_timezone()))))).split('.'))[0],
+                   'game_length':time.strftime("%M:%S",time.gmtime(float(((lamo[inc2]).get('time_eliminated'))))), 
                    'traits':traits,
                    'champions':champs
                    }
         return matchdict
     
-    with ThreadPoolExecutor(max_workers=4) as executor:
+    with ThreadPoolExecutor(max_workers=2) as executor:
         futures = [executor.submit(process_match, inc) for inc in range(len(allMatches))]
         for future in futures:
             match = future.result()

@@ -40,11 +40,13 @@
                 </div>
                 <div class="otherstats">
                     <h1 class='timetilldeath'>{{match.game_length}}</h1>
+                    <h1 class='timesincegame'>{{match.game_time}}</h1>
+                    
                 </div>
 
             </div>
             <div class="participants">
-                {% for participant in match.participants %}
+                {% for participant in match.otherparticipants %}
                     <li class="name"><a  href="/players/{{participant}}">{{participant}}</a></li>
 
                 {% endfor %}
