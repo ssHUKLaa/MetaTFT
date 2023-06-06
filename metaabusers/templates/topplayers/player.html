@@ -37,10 +37,22 @@
             <div class="matchstats">
                 <div class="placementhold">
                     <h1 class="placement">{{match.placement}}</h1>
+                    <h1 class='timesincegame'>{{match.game_time}}</h1>
                 </div>
                 <div class="otherstats">
                     <h1 class='timetilldeath'>{{match.game_length}}</h1>
-                    <h1 class='timesincegame'>{{match.game_time}}</h1>
+                    <div class="traits">
+                        {% for trait in match.traits %}
+
+
+                        {% endfor %}
+                    </div>
+                    <div class="units">
+                        {% for unit in match.champions %}
+
+                        {% endfor %}
+                    </div>
+                    
                     
                 </div>
 

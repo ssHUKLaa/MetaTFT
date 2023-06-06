@@ -13,6 +13,7 @@ class Matches(models.Model):
     placement = models.IntegerField(default=0)
     game_time = models.CharField(max_length=20, default='')
     game_length = models.CharField(max_length=20, default='')
+    set_number = models.IntegerField(default=0)
 
     searchedPlayer= models.ForeignKey(searchPlayers, on_delete=models.CASCADE,default=None)
 

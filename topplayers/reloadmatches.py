@@ -34,6 +34,7 @@ def fillDb(player,matches):
         swag.placement = eachmatch.get('placement')
         swag.game_length = eachmatch.get('game_length')
         swag.game_time = eachmatch.get('game_time')
+        swag.set_number = eachmatch.get('set_number')
         swag.searchedPlayer = b
         swag.save()
 
@@ -111,6 +112,7 @@ def matchesfordisp(player):
                    'placement':(lamo[inc2]).get('placement'),
                    'game_time':((str(timezone.now()-(timezone.datetime.fromtimestamp((((tes.get('info')).get('game_datetime'))/1000), tz=(timezone.get_current_timezone()))))).split('.'))[0],
                    'game_length':time.strftime("%M:%S",time.gmtime(float(((lamo[inc2]).get('time_eliminated'))))), 
+                   'set_number': (tes.get('info').get('tft_set_number')),
                    'traits':traits,
                    'champions':champs
                    }

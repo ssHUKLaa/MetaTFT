@@ -84,8 +84,8 @@ def matchVersion(match):
     return match.get('game_version')
 
 #print(searchPlayerStuff((getPlayer('prestivent').get('id'))))
-#swa=(((getMatch(getMatches(getPlayer('prestivent')),0)).get('info').keys()))
-#print(swa)
+swa=(((getMatch(getMatches(getPlayer('prestivent')),0)).get('info').keys()))
+print(swa)
 #print((getPlayer('prestivent')).get('id'))
 #print(getPlayer('prestivent'))
 ''' for icons

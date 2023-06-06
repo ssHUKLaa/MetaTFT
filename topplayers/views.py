@@ -55,7 +55,8 @@ def players_by_api(request, player):
                         'otherparticipants':participants,
                         'game_time':match.game_time,
                         'game_length':match.game_length, 
-                        'champions':champlist, 
+                        'set_number':match.set_number,
+                        'champions':champlist,
                         'traits':traitlist
                         }
 
