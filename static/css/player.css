@@ -76,7 +76,7 @@
     background: #ccc5c5;
     color: white;
     font-size: 10px;
-    width: 60%;
+    width: 100%;
     outline: groove #000000;
     }
     .matchholder {
@@ -114,6 +114,13 @@
                 .unitcontainer {
                     display: inline;
     
+                    }
+                    .unitimg {
+                        width: 40px;
+                        height: 40px;
+                        object-fit: cover;
+                        object-position: 100% 20%;
+                        
                     }
                     
 
