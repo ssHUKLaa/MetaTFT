@@ -37,30 +37,32 @@
             <div class="matchstats">
                 <div class="placementhold">
                     <h1 class="placement">{{match.placement}}</h1>
-                    <h1 class='timesincegame'>{{match.game_time}}</h1>
+                    
                 </div>
                 <div class="otherstats">
-                    <h1 class='timetilldeath'>{{match.game_length}}</h1>
+                    <div class="timestuff">
+                        <h1 class='timetilldeath'>{{match.game_length}} - {{match.game_time}}</h1>
+                    </div>
                     <div class="traits">
                         {% for trait in match.traits %}
-
-
+                            
                         {% endfor %}
                     </div>
                     <div class="units">
                         {% for unit in match.champions %}
-
+                            <div class="unitcontainer">
+                                <object class ="unitimg" data="https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}.png" type="image/png" style="width: 30%; height: 30%;">
+                                    <img class ="unitimg" src="https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png" style="width: 30%; height: 30%;" alt="https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png">
+                                </object>
+                            </div>
                         {% endfor %}
                     </div>
-                    
-                    
                 </div>
 
             </div>
             <div class="participants">
                 {% for participant in match.otherparticipants %}
                     <li class="name"><a  href="/players/{{participant}}">{{participant}}</a></li>
-
                 {% endfor %}
             </div>
             

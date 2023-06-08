@@ -46,7 +46,7 @@ def players_by_api(request, player):
                 Items=((champion.Items).split(','))
                 champinfo={'dispindex':(champion.id)[len(champion.id)-1],
                            'Items':Items,
-                           'Name':champion.Name,
+                           'Name':((champion.Name).lower()),
                            'Star':champion.Star, 
                            'Rarity':champion.Rarity+1
                            }
