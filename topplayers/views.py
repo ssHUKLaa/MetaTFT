@@ -44,12 +44,18 @@ def players_by_api(request, player):
             traitlist=[]
             for champion in Champions.objects.filter(associatedMatch=match.id):
                 Items=((champion.Items).split(','))
-                champinfo={'dispindex':(champion.id)[len(champion.id)-1],'Items':Items,'Name':champion.Name,'Star':champion.Star, 'Rarity':champion.Rarity+1}
+                champinfo={'dispindex':(champion.id)[len(champion.id)-1],
+                           'Items':Items,
+                           'Name':champion.Name,
+                           'Star':champion.Star, 
+                           'Rarity':champion.Rarity+1
+                           }
                 champlist.append(champinfo)
             for trait in Traits.objects.filter(associatedMatch=match.id):
-                traitinfo={'dispindex':(trait.id)[len(trait.id)-1],'Name':trait.traitname, 'numUnits':trait.tierunits}
+                traitinfo={'dispindex':(trait.id)[len(trait.id)-1],
+                           'Name':trait.traitname, 
+                           'numUnits':trait.tierunits}
                 traitlist.append(traitinfo)
-
 
             matchdict= {'placement':match.placement, 
                         'otherparticipants':participants,
@@ -59,7 +65,6 @@ def players_by_api(request, player):
                         'champions':champlist,
                         'traits':traitlist
                         }
-
             playermatches.append(matchdict)
     elif (playerstats==None):
         playerstats=playerStats(contestant)
