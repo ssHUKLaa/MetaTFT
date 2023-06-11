@@ -115,12 +115,40 @@
                     display: inline;
     
                     }
-                    .unitimg {
+                    .unitimg0 {
                         width: 40px;
                         height: 40px;
                         object-fit: cover;
                         object-position: 100% 20%;
-                        
+                        border: 2px solid #545454;
+                    }
+                    .unitimg1 {
+                        width: 40px;
+                        height: 40px;
+                        object-fit: cover;
+                        object-position: 100% 20%;
+                        border: 2px solid #048a21;
+                    }
+                    .unitimg2 {
+                        width: 40px;
+                        height: 40px;
+                        object-fit: cover;
+                        object-position: 100% 20%;
+                        border: 2px solid #16048a;
+                    }
+                    .unitimg4 {
+                        width: 40px;
+                        height: 40px;
+                        object-fit: cover;
+                        object-position: 100% 20%;
+                        border: 2px solid #7a048a;
+                    }
+                    .unitimg5 {
+                        width: 40px;
+                        height: 40px;
+                        object-fit: cover;
+                        object-position: 100% 20%;
+                        border: 2px solid #d39f03;
                     }
                     
 

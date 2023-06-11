@@ -9,7 +9,8 @@ watcher= TftWatcher(apikey)
 lolwatcher= LolWatcher(apikey)
 my_region = 'na1'
 version=lolwatcher.data_dragon.versions_for_region(my_region)
-
+getstuff = requests.get('https://raw.communitydragon.org/latest/cdragon/tft/en_us.json')
+setdict = getstuff.json()
 
 def getChallengerPlayers():
     
@@ -83,17 +84,19 @@ def matchTime(match):
 def matchVersion(match):
     return match.get('game_version')
 
+def getCost(name, setnumber):
+    return 0
+
 #print(searchPlayerStuff((getPlayer('prestivent').get('id'))))
 swa=(((getMatch(getMatches(getPlayer('prestivent')),0)).get('info').keys()))
 print(swa)
 #print((getPlayer('prestivent')).get('id'))
 #print(getPlayer('prestivent'))
 ''' for icons
-tes = requests.get('https://raw.communitydragon.org/latest/cdragon/tft/en_us.json')
-tex = tes.json()
+
 print(((tex.get('setData')[2]).get('champions'))[0])
 '''
 #print(getMatches(getPlayer('Destroyernv')))
-
+#print(((((setdict.get('setData'))[2]).get('champions'))[0]).keys())
 #print(timezone.now()-(timezone.datetime.fromtimestamp((1685408445226/1000), tz=(timezone.get_current_timezone()))))
 #print(timezone.now()-(timezone.datetime.strptime((timezone.datetime.fromtimestamp(1685758149029)), '%Y-%m-%d %H:%M:%S')))
