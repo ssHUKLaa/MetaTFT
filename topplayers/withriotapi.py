@@ -4,13 +4,14 @@ from django.utils import timezone
 import datetime
 from decouple import config
 import requests
+import ujson
 apikey=config('apikey', cast=str)
 watcher= TftWatcher(apikey)
 lolwatcher= LolWatcher(apikey)
 my_region = 'na1'
 version=lolwatcher.data_dragon.versions_for_region(my_region)
-getstuff = requests.get('https://raw.communitydragon.org/latest/cdragon/tft/en_us.json')
-setdict = getstuff.json()
+
+
 
 def getChallengerPlayers():
     
@@ -85,17 +86,23 @@ def matchVersion(match):
     return match.get('game_version')
 
 def getCost(name, setnumber):
-    return 0
+    getstuff = (requests.get('https://raw.communitydragon.org/latest/cdragon/tft/en_us.json')).text
+    setdict = ujson.loads(getstuff)
+    setinc = 0
+    for sets in (setdict.get('setData')):
+        if setnumber==sets.get('n')
 
 #print(searchPlayerStuff((getPlayer('prestivent').get('id'))))
 swa=(((getMatch(getMatches(getPlayer('prestivent')),0)).get('info').keys()))
 print(swa)
 #print((getPlayer('prestivent')).get('id'))
 #print(getPlayer('prestivent'))
-''' for icons
 
-print(((tex.get('setData')[2]).get('champions'))[0])
-'''
+
+print(tex.get('setData')[2]).keys()
+
+
+
 #print(getMatches(getPlayer('Destroyernv')))
 #print(((((setdict.get('setData'))[2]).get('champions'))[0]).keys())
 #print(timezone.now()-(timezone.datetime.fromtimestamp((1685408445226/1000), tz=(timezone.get_current_timezone()))))
