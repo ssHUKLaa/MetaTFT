@@ -43,8 +43,9 @@ def fillDb(player,matches):
         for trait in traitlist:
             weow = Traits()
             weow.id = eachmatch.get('id')+(','+str(inctrait))
-            weow.traitname = trait.get('name')
+            weow.traitname = trait.get('Name')
             weow.currenttier = trait.get('tier')
+            weow.style = trait.get('style')
             weow.tierunits = trait.get('numUnits')
             weow.associatedMatch = swag
             weow.save()
@@ -99,7 +100,7 @@ def matchesfordisp(player):
         traitlist=lamo[inc2].get('traits')
         traits=[]
         for trait in traitlist:
-            traitdict={'name':trait.get('name'),'tier':trait.get('tier_current'),'numUnits':trait.get('num_units')}
+            traitdict={'Name':(trait.get('name'))[5:].lower(),'tier':trait.get('tier_current'),'style':trait.get('style'),'numUnits':trait.get('num_units')}
             traits.append(traitdict)
         
         unitlist = lamo[inc2].get('units')

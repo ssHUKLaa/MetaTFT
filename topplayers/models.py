@@ -21,6 +21,7 @@ class Traits(models.Model):
     id = models.CharField(max_length=200,primary_key=True)
     traitname = models.CharField(max_length=100, default='')
     currenttier = models.IntegerField(default=0)
+    style = models.IntegerField(default=0)
     tierunits = models.IntegerField(default=0)
 
     associatedMatch = models.ForeignKey(Matches,on_delete=models.CASCADE,default=None)

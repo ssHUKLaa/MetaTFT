@@ -110,6 +110,12 @@
                 .timestuff {
                     display: inline;
                     }
+                .traitcontainer {
+                    display: inline;
+                    }
+                    .traitimg {
+                        filter: invert(1);
+                    }
 
                 .unitcontainer {
                     display: inline;

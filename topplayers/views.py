@@ -54,8 +54,9 @@ def players_by_api(request, player):
                            }
                 champlist.append(champinfo)
             for trait in Traits.objects.filter(associatedMatch=match.id):
-                traitinfo={'dispindex':(trait.id)[len(trait.id)-1],
-                           'Name':trait.traitname, 
+                traitinfo={'Name':trait.traitname,
+                           'tier': trait.currenttier,
+                           'style': trait.style,
                            'numUnits':trait.tierunits}
                 traitlist.append(traitinfo)
 

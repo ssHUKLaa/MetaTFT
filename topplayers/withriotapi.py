@@ -97,18 +97,12 @@ def getCost(name, setnumber, setdict):
                 if (name==stuff.get('apiName')):
                     return stuff.get('cost')
    
-
-    
-
 #print(searchPlayerStuff((getPlayer('prestivent').get('id'))))
-#swa=(((getMatch(getMatches(getPlayer('prestivent')),0)).get('info').keys()))
+#swa=(((getMatch(getMatches(getPlayer('prestivent')),0)).get('info').get('participants')[0].get('traits')))
 #print(swa)
 #print((getPlayer('prestivent')).get('id'))
 #print(getPlayer('prestivent'))
 
-getstuff = (requests.get('https://raw.communitydragon.org/latest/cdragon/tft/en_us.json')).text
-setdict = ujson.loads(getstuff)
-print((setdict.get('setData')[2].get('champions'))[0].get('cost'))
 
 
 
