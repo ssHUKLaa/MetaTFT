@@ -85,21 +85,30 @@ def matchTime(match):
 def matchVersion(match):
     return match.get('game_version')
 
-def getCost(name, setnumber):
+def loadstuff():
     getstuff = (requests.get('https://raw.communitydragon.org/latest/cdragon/tft/en_us.json')).text
     setdict = ujson.loads(getstuff)
-    setinc = 0
+    return setdict
+    
+def getCost(name, setnumber, setdict):
     for sets in (setdict.get('setData')):
-        if setnumber==sets.get('n')
+        if (setnumber==sets.get('number')):
+             for stuff in (sets.get('champions')):
+                if (name==stuff.get('apiName')):
+                    return stuff.get('cost')
+   
+
+    
 
 #print(searchPlayerStuff((getPlayer('prestivent').get('id'))))
-swa=(((getMatch(getMatches(getPlayer('prestivent')),0)).get('info').keys()))
-print(swa)
+#swa=(((getMatch(getMatches(getPlayer('prestivent')),0)).get('info').keys()))
+#print(swa)
 #print((getPlayer('prestivent')).get('id'))
 #print(getPlayer('prestivent'))
 
-
-print(tex.get('setData')[2]).keys()
+getstuff = (requests.get('https://raw.communitydragon.org/latest/cdragon/tft/en_us.json')).text
+setdict = ujson.loads(getstuff)
+print((setdict.get('setData')[2].get('champions'))[0].get('cost'))
 
 
 

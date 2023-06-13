@@ -16,10 +16,12 @@ def players_by_api(request, player):
     contestant=(getPlayer(player))
     playerstats=None
     initdispmatches=None
+    refreshed = False
     if request.method == 'POST':
         if 'Refresh' in request.POST:
             playerstats=playerStats(contestant)
             initdispmatches= matchesfordisp(contestant)
+            refreshed = True
             tes=threading.Thread(target=fillDb,args=(playerstats,initdispmatches))
             tes.start()
         elif 'searchPl' in request.POST:
@@ -33,7 +35,7 @@ def players_by_api(request, player):
     count=(((searchPlayers.objects.filter(name=contestant.get('name'))).count()))
     
     statsdict=None
-    if ((count>0) and (playerstats==None)):
+    if ((count>0) and (refreshed==False)):
         playerbyid=(searchPlayers.objects.filter(id=contestant.get('id')).first())
         statsdict={'tier':playerbyid.tier,'LP':playerbyid.LP,'dateadded':playerbyid.add_date}
 
@@ -48,7 +50,7 @@ def players_by_api(request, player):
                            'Items':Items,
                            'Name':((champion.Name).lower()),
                            'Star':champion.Star, 
-                           'Rarity':champion.Rarity+1
+                           'Rarity':champion.Rarity
                            }
                 champlist.append(champinfo)
             for trait in Traits.objects.filter(associatedMatch=match.id):
@@ -69,11 +71,17 @@ def players_by_api(request, player):
     elif (playerstats==None):
         playerstats=playerStats(contestant)
             
-    statsdisp=playerstats
-    matchesdisp=initdispmatches
-    if (playerstats==None):
+    if (refreshed==True):
+        statsdisp=playerstats
+        matchesdisp=initdispmatches
+    elif (refreshed==False and count>0):
         statsdisp=statsdict
         matchesdisp=playermatches
+    elif (refreshed==False and count==0):
+        statsdisp=playerstats
+        matchesdisp=initdispmatches
+
+        
     icon=(rankIcon('unranked I'))
     if (statsdisp.get('tier')!='N/A'):
         icon=(rankIcon(statsdisp.get('tier')))

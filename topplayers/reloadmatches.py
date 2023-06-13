@@ -1,6 +1,6 @@
 from .models import Matches, searchPlayers, Champions, Traits
 from django.utils import timezone
-from .withriotapi import searchPlayerStuff, getMatches, getMatch, nameByPUUID
+from .withriotapi import searchPlayerStuff, getMatches, getMatch, nameByPUUID, loadstuff, getCost
 from concurrent.futures import ThreadPoolExecutor
 import time
 
@@ -55,7 +55,7 @@ def fillDb(player,matches):
         for unit in unitlist:
             loll = Champions()
             loll.id = eachmatch.get('id')+(','+str(incchamps))
-            loll.Name = unit.get('name')
+            loll.Name = unit.get('Name')
             loll.Star = unit.get('Star')
             loll.Items = ','.join(unit.get('Items'))
             loll.Rarity = unit.get('Rarity')
@@ -80,6 +80,7 @@ def playerStats(player):
 def matchesfordisp(player):
     allMatches=getMatches(player)
     matchlist=[]
+    stuff=loadstuff()
 
     def process_match(inc):
         tes = getMatch(allMatches,inc)
@@ -103,8 +104,10 @@ def matchesfordisp(player):
         
         unitlist = lamo[inc2].get('units')
         champs=[]
+
         for unit in unitlist:
-            champdict={'name':unit.get('character_id'),'Star':unit.get('tier'),'Items':unit.get('itemNames'),'Rarity':unit.get('rarity')}
+
+            champdict={'Name':(unit.get('character_id')).lower(),'Star':unit.get('tier'),'Items':unit.get('itemNames'),'Rarity':getCost(unit.get('character_id'),(tes.get('info').get('tft_set_number')), stuff)}
             champs.append(champdict)
 
         matchdict={'id':allMatches[inc],
