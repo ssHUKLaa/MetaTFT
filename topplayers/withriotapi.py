@@ -104,8 +104,6 @@ def getCost(name, setnumber, setdict):
 #print(getPlayer('prestivent'))
 
 
-
-
 #print(getMatches(getPlayer('Destroyernv')))
 #print(((((setdict.get('setData'))[2]).get('champions'))[0]).keys())
 #print(timezone.now()-(timezone.datetime.fromtimestamp((1685408445226/1000), tz=(timezone.get_current_timezone()))))

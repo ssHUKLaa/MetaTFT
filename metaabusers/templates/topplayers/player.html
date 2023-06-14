@@ -1,4 +1,5 @@
 {% load static %}
+{% load rangetemptag %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,19 +54,50 @@
                     <div class="units">
                         {% for unit in match.champions %}
                             <div class="unitcontainer">
-                                {% if unit.Rarity == 1 %}
-                                    <img class ="unitimg1" src="https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}.png"  onerror="this.oneerror=null; this.src='https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png'" alt="https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png">
-                                {% elif unit.Rarity == 2 %}
-                                    <img class ="unitimg2" src="https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}.png"  onerror="this.oneerror=null; this.src='https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png'" alt="https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png">
-                                {% elif unit.Rarity == 3 %}
-                                    <img class ="unitimg3" src="https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}.png"  onerror="this.oneerror=null; this.src='https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png'" alt="https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png">
-                                {% elif unit.Rarity == 4 %}
-                                    <img class ="unitimg4" src="https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}.png"  onerror="this.oneerror=null; this.src='https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png'" alt="https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png">
-                                {% elif unit.Rarity == 5 %}
-                                    <img class ="unitimg5" src="https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}.png"  onerror="this.oneerror=null; this.src='https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png'" alt="https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png">
-                                {% else %}
-                                    <img class ="unitimg5" src="https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}.png"  onerror="this.oneerror=null; this.src='https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png'" alt="https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png">
-                                {% endif %}
+                                
+                                    {% if unit.Rarity == 1 %}
+                                        <div class="starhold">
+                                            {% for star in unit.Star|get_range %}
+                                                <img class="star1" src="https://raw.communitydragon.org/pbe/game/assets/ux/tft/notificationicons/goldstar.png" alt="https://raw.communitydragon.org/pbe/game/assets/ux/tft/notificationicons/goldstar.png">
+                                            {% endfor %}
+                                        </div>
+                                        <img class ="unitimg1" src="https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}.png"  onerror="this.oneerror=null; this.src='https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png'" alt="https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png">
+                                    {% elif unit.Rarity == 2 %}
+                                        <div class="starhold">
+                                            {% for star in unit.Star|get_range %}
+                                                <img class="star2" src="https://raw.communitydragon.org/pbe/game/assets/ux/tft/notificationicons/goldstar.png" alt="https://raw.communitydragon.org/pbe/game/assets/ux/tft/notificationicons/goldstar.png">
+                                            {% endfor %}
+                                        </div>
+                                        <img class ="unitimg2" src="https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}.png"  onerror="this.oneerror=null; this.src='https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png'" alt="https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png">
+                                    {% elif unit.Rarity == 3 %}
+                                        <div class="starhold">
+                                            {% for star in unit.Star|get_range %}
+                                                <img class="star3" src="https://raw.communitydragon.org/pbe/game/assets/ux/tft/notificationicons/goldstar.png" alt="https://raw.communitydragon.org/pbe/game/assets/ux/tft/notificationicons/goldstar.png">
+                                            {% endfor %}
+                                        </div>  
+                                        <img class ="unitimg3" src="https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}.png"  onerror="this.oneerror=null; this.src='https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png'" alt="https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png">
+                                    {% elif unit.Rarity == 4 %}
+                                        <div class="starhold">
+                                            {% for star in unit.Star|get_range %}
+                                                <img class="star4" src="https://raw.communitydragon.org/pbe/game/assets/ux/tft/notificationicons/goldstar.png" alt="https://raw.communitydragon.org/pbe/game/assets/ux/tft/notificationicons/goldstar.png">
+                                            {% endfor %}
+                                        </div>
+                                        <img class ="unitimg4" src="https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}.png"  onerror="this.oneerror=null; this.src='https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png'" alt="https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png">
+                                    {% elif unit.Rarity == 5 %}
+                                        <div class="starhold">
+                                            {% for star in unit.Star|get_range %}
+                                                <img class="star5" src="https://raw.communitydragon.org/pbe/game/assets/ux/tft/notificationicons/goldstar.png" alt="https://raw.communitydragon.org/pbe/game/assets/ux/tft/notificationicons/goldstar.png">
+                                            {% endfor %}
+                                        </div>
+                                        <img class ="unitimg5" src="https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}.png"  onerror="this.oneerror=null; this.src='https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png'" alt="https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png">
+                                    {% else %}
+                                        <div class="starhold">
+                                            {% for star in unit.Star|get_range %}
+                                                <img class="star5" src="https://raw.communitydragon.org/pbe/game/assets/ux/tft/notificationicons/goldstar.png" alt="https://raw.communitydragon.org/pbe/game/assets/ux/tft/notificationicons/goldstar.png">
+                                            {% endfor %}
+                                        </div>
+                                        <img class ="unitimg5" src="https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}.png"  onerror="this.oneerror=null; this.src='https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png'" alt="https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png">
+                                    {% endif %}
                             </div>
                         {% endfor %}
                     </div>
