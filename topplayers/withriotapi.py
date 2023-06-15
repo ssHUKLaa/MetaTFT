@@ -96,6 +96,13 @@ def getCost(name, setnumber, setdict):
              for stuff in (sets.get('champions')):
                 if (name==stuff.get('apiName')):
                     return stuff.get('cost')
+                
+def getTraitIconURL(name,setnumber, setdict):
+    hold = ((setdict.get('sets')).get(str(setnumber)))
+    for trait in hold.get('traits'):
+        if (name==(trait.get('apiName'))):
+            nameformat=(((trait.get('icon'))[(trait.get('icon')).rindex('/'):]).rstrip(".tex")).lower()
+            return f'https://raw.communitydragon.org/latest/game/assets/ux/traiticons{nameformat}.png'
    
 #print(searchPlayerStuff((getPlayer('prestivent').get('id'))))
 #swa=(((getMatch(getMatches(getPlayer('prestivent')),0)).get('info').get('participants')[0].get('traits')))
@@ -108,7 +115,5 @@ def getCost(name, setnumber, setdict):
 #print(((((setdict.get('setData'))[2]).get('champions'))[0]).keys())
 #print(timezone.now()-(timezone.datetime.fromtimestamp((1685408445226/1000), tz=(timezone.get_current_timezone()))))
 #print(timezone.now()-(timezone.datetime.strptime((timezone.datetime.fromtimestamp(1685758149029)), '%Y-%m-%d %H:%M:%S')))
-
-
 
 #print(sorted(tes, key=lambda d: d['gametime']))
