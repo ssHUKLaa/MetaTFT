@@ -3,8 +3,9 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.utils import timezone
 from .withriotapi import getPlayer, getProfilePicture, rankIcon
-from .reloadmatches import fillDb, playerStats, matchesfordisp
+from .reloadmatches import fillDb, playerStats, matchesfordisp, timedelta_str_to_posix
 from .models import searchPlayers, Matches, Champions, Traits
+from operator import itemgetter
 import time
 import threading
 
@@ -69,6 +70,9 @@ def players_by_api(request, player):
                         'traits':traitlist
                         }
             playermatches.append(matchdict)
+        playermatches = sorted(playermatches,key=lambda x: timedelta_str_to_posix(x['game_time']))
+
+        
     elif (playerstats==None):
         playerstats=playerStats(contestant)
             

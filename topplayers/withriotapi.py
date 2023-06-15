@@ -108,3 +108,7 @@ def getCost(name, setnumber, setdict):
 #print(((((setdict.get('setData'))[2]).get('champions'))[0]).keys())
 #print(timezone.now()-(timezone.datetime.fromtimestamp((1685408445226/1000), tz=(timezone.get_current_timezone()))))
 #print(timezone.now()-(timezone.datetime.strptime((timezone.datetime.fromtimestamp(1685758149029)), '%Y-%m-%d %H:%M:%S')))
+
+
+
+#print(sorted(tes, key=lambda d: d['gametime']))

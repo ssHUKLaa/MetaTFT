@@ -18,6 +18,7 @@ def fillDb(player,matches):
         if ((((diff.seconds//3600))<5)):
             return None
     '''
+
     b=searchPlayers()
     b.name=(player.get('playername'))
     b.id=(player.get('id'))
@@ -25,6 +26,24 @@ def fillDb(player,matches):
     b.LP=player.get('LP')
     b.add_date=player.get('dateadded')
     b.save()
+
+    lmfaaoo = (Matches.objects.filter(searchedPlayer=b.id))
+    if ((lmfaaoo.count())>0):
+        for plmatches in lmfaaoo:
+            gametime_str = plmatches.game_time
+            parts = gametime_str.split(', ')
+            if len(parts) == 2:  # Check if the string representation includes days
+                days = int(parts[0].split()[0])  # Extract the number of days
+                time = parts[1]
+            else:
+                days = 0
+                time = parts[0]
+
+            time_parts = [int(part) for part in time.split(':')]
+            total_time = timezone.timedelta(days=days, hours=time_parts[0], minutes=time_parts[1], seconds=time_parts[2])
+
+            if total_time > timezone.timedelta(days=5):
+                plmatches.delete()
 
     for eachmatch in matches:
 
@@ -130,3 +149,15 @@ def matchesfordisp(player):
                 matchlist.append(match)
     
     return matchlist
+
+def timedelta_str_to_posix(time_str):
+    if "day" in time_str:
+        days, time = time_str.split(", ")
+        days = int(days.split()[0])
+    else:
+        days = 0
+        time = time_str
+    hours, minutes, seconds = map(int, time.split(":"))
+    timedelta_obj = timezone.timedelta(days=days, hours=hours, minutes=minutes, seconds=seconds)
+    posix_timestamp = (timezone.now()).timestamp() + timedelta_obj.total_seconds()
+    return posix_timestamp
