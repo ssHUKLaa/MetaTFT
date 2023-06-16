@@ -1,7 +1,7 @@
 from riotwatcher import TftWatcher, ApiError, LolWatcher
 from datetime import datetime
 from django.utils import timezone
-import datetime
+import datetime, time
 from decouple import config
 import requests
 import ujson
@@ -101,8 +101,9 @@ def getTraitIconURL(name,setnumber, setdict):
     hold = ((setdict.get('sets')).get(str(setnumber)))
     for trait in hold.get('traits'):
         if (name==(trait.get('apiName'))):
-            nameformat=(((trait.get('icon'))[(trait.get('icon')).rindex('/'):]).rstrip(".tex")).lower()
+            nameformat=(((trait.get('icon'))[(trait.get('icon')).rindex('/'):])[:-4]).lower()
             return f'https://raw.communitydragon.org/latest/game/assets/ux/traiticons{nameformat}.png'
+    
    
 #print(searchPlayerStuff((getPlayer('prestivent').get('id'))))
 #swa=(((getMatch(getMatches(getPlayer('prestivent')),0)).get('info').get('participants')[0].get('traits')))

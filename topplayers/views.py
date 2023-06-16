@@ -58,7 +58,7 @@ def players_by_api(request, player):
                 traitinfo={'Name':trait.traitname,
                            'tier': trait.currenttier,
                            'style': trait.style,
-                           'numUnits':trait.tierunits}
+                           'imageIcon':trait.imageIcon}
                 traitlist.append(traitinfo)
 
             matchdict= {'placement':match.placement, 

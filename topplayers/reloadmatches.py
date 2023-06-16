@@ -1,11 +1,11 @@
 from .models import Matches, searchPlayers, Champions, Traits
 from django.utils import timezone
-from .withriotapi import searchPlayerStuff, getMatches, getMatch, nameByPUUID, loadstuff, getCost
+from .withriotapi import searchPlayerStuff, getMatches, getMatch, nameByPUUID, loadstuff, getCost, getTraitIconURL
 from concurrent.futures import ThreadPoolExecutor
 import time
 
 def fillDb(player,matches):
-
+    
     count=(((searchPlayers.objects.filter(name=player.get('playername'))).count()))
     '''
     if count>0:
@@ -65,7 +65,7 @@ def fillDb(player,matches):
             weow.traitname = trait.get('Name')
             weow.currenttier = trait.get('tier')
             weow.style = trait.get('style')
-            weow.tierunits = trait.get('numUnits')
+            weow.imageIcon = trait.get('imageIcon')
             weow.associatedMatch = swag
             weow.save()
             inctrait+=1
@@ -119,14 +119,13 @@ def matchesfordisp(player):
         traitlist=lamo[inc2].get('traits')
         traits=[]
         for trait in traitlist:
-            traitdict={'Name':(trait.get('name'))[5:].lower(),'tier':trait.get('tier_current'),'style':trait.get('style'),'numUnits':trait.get('num_units')}
+            traitdict={'Name':(trait.get('name'))[5:].lower(),'tier':trait.get('tier_current'),'style':trait.get('style'),'imageIcon':getTraitIconURL(trait.get('name'),(tes.get('info').get('tft_set_number')),stuff)}
             traits.append(traitdict)
         
         unitlist = lamo[inc2].get('units')
         champs=[]
 
         for unit in unitlist:
-
             champdict={'Name':(unit.get('character_id')).lower(),'Star':unit.get('tier'),'Items':unit.get('itemNames'),'Rarity':getCost(unit.get('character_id'),(tes.get('info').get('tft_set_number')), stuff)}
             champs.append(champdict)
 
