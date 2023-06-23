@@ -185,6 +185,13 @@
                         object-position: 100% 20%;
                         border: 2px solid #d39f03;
                     }
+                
+                    .item {
+                        display: inline;
+                        width: 13px;
+                        height: 13px;
+                    }
+
                     
 
 

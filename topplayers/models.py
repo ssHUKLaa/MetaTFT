@@ -30,7 +30,7 @@ class Champions(models.Model):
     id = models.CharField(max_length=200,primary_key=True)
     Name = models.CharField(max_length=20, default='')
     Star = models.IntegerField(default=1)
-    Items = models.CharField(max_length=100, default='') #will have to delineate with commas
+    Items = models.CharField(max_length=800, default='') #will have to delineate with commas
     Rarity = models.IntegerField(default=0)
 
     associatedMatch = models.ForeignKey(Matches,on_delete=models.CASCADE,default=None)

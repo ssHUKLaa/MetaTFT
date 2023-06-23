@@ -1,6 +1,6 @@
 from .models import Matches, searchPlayers, Champions, Traits
 from django.utils import timezone
-from .withriotapi import searchPlayerStuff, getMatches, getMatch, nameByPUUID, loadstuff, getCost, getTraitIconURL
+from .withriotapi import searchPlayerStuff, getMatches, getMatch, nameByPUUID, loadstuff, getCost, getTraitIconURL, getItemIconURL
 from concurrent.futures import ThreadPoolExecutor
 import time
 
@@ -126,7 +126,11 @@ def matchesfordisp(player):
         champs=[]
 
         for unit in unitlist:
-            champdict={'Name':(unit.get('character_id')).lower(),'Star':unit.get('tier'),'Items':unit.get('itemNames'),'Rarity':getCost(unit.get('character_id'),(tes.get('info').get('tft_set_number')), stuff)}
+    
+            champdict={'Name':(unit.get('character_id')).lower(),
+                       'Star':unit.get('tier'),
+                       'Items':[getItemIconURL(name, stuff) for name in (unit.get('itemNames'))],
+                       'Rarity':getCost(unit.get('character_id'),(tes.get('info').get('tft_set_number')), stuff)}
             champs.append(champdict)
 
         matchdict={'id':allMatches[inc],

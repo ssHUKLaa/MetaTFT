@@ -62,6 +62,12 @@
                                             {% endfor %}
                                         </div>
                                         <img class ="unitimg1" src="https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}.png"  onerror="this.onerror=null; this.src='https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png'" alt="https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png">
+                                        <div class="itemhold">
+                                            {% for item in unit.Items %}
+                                                <img class="item" src={{item}}>
+                                            {% endfor %}
+                                        </div>
+                                            
                                     {% elif unit.Rarity == 2 %}
                                         <div class="starhold">
                                             {% for star in unit.Star|get_range %}
@@ -69,6 +75,11 @@
                                             {% endfor %}
                                         </div>
                                         <img class ="unitimg2" src="https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}.png"  onerror="this.onerror=null; this.src='https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png'" alt="https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png">
+                                        <div class="itemhold">
+                                            {% for item in unit.Items %}
+                                                <img class="item" src={{item}}>
+                                            {% endfor %}
+                                        </div>
                                     {% elif unit.Rarity == 3 %}
                                         <div class="starhold">
                                             {% for star in unit.Star|get_range %}
@@ -76,6 +87,11 @@
                                             {% endfor %}
                                         </div>  
                                         <img class ="unitimg3" src="https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}.png"  onerror="this.onerror=null; this.src='https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png'" alt="https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png">
+                                        <div class="itemhold">
+                                            {% for item in unit.Items %}
+                                                <img class="item" src={{item}}>
+                                            {% endfor %}
+                                        </div>
                                     {% elif unit.Rarity == 4 %}
                                         <div class="starhold">
                                             {% for star in unit.Star|get_range %}
@@ -83,6 +99,11 @@
                                             {% endfor %}
                                         </div>
                                         <img class ="unitimg4" src="https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}.png"  onerror="this.onerror=null; this.src='https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png'" alt="https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png">
+                                        <div class="itemhold">
+                                            {% for item in unit.Items %}
+                                                <img class="item" src={{item}}>
+                                            {% endfor %}
+                                        </div>
                                     {% elif unit.Rarity == 5 %}
                                         <div class="starhold">
                                             {% for star in unit.Star|get_range %}
@@ -90,6 +111,12 @@
                                             {% endfor %}
                                         </div>
                                         <img class ="unitimg5" src="https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}.png"  onerror="this.onerror=null; this.src='https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png'" alt="https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png">
+                                        
+                                        <div class="itemhold">
+                                            {% for item in unit.Items %}
+                                                <img class="item" src={{item}}>
+                                            {% endfor %}
+                                        </div>
                                     {% else %}
                                         <div class="starhold">
                                             {% for star in unit.Star|get_range %}
@@ -97,6 +124,11 @@
                                             {% endfor %}
                                         </div>
                                         <img class ="unitimg5" src="https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}.png"  onerror="this.onerror=null; this.src='https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png'" alt="https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png">
+                                        <div class="itemhold">
+                                            {% for item in unit.Items %}
+                                                <img class="item" src={{item}}>
+                                            {% endfor %}
+                                        </div>
                                     {% endif %}
                             </div>
                         {% endfor %}
