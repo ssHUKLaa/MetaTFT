@@ -191,6 +191,12 @@
                         width: 13px;
                         height: 13px;
                     }
+                    .emptyitem {
+                        display: inline;
+                        visibility: hidden;
+                        width: 13px;
+                        height: 13px;
+                    }
 
                     
 

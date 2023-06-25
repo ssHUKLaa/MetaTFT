@@ -1,7 +1,4 @@
-from riotwatcher import TftWatcher, ApiError, LolWatcher
-from datetime import datetime
-from django.utils import timezone
-import datetime, time
+from riotwatcher import TftWatcher, LolWatcher
 from decouple import config
 import requests
 import ujson
@@ -107,6 +104,8 @@ def getItemIconURL(name, setdict):
         if (stuff.get('apiName')==name):
             url=stuff.get('icon').lower()[:-4]
             return f'https://raw.communitydragon.org/latest/game/{url}.png'
+        
+
    
 #print(searchPlayerStuff((getPlayer('prestivent').get('id'))))
 #swa=(((getMatch(getMatches(getPlayer('prestivent')),0)).get('info').get('participants')[0].get('traits')))
@@ -119,3 +118,6 @@ def getItemIconURL(name, setdict):
 #print(timezone.now()-(timezone.datetime.strptime((timezone.datetime.fromtimestamp(1685758149029)), '%Y-%m-%d %H:%M:%S')))
 
 #print(sorted(tes, key=lambda d: d['gametime']))
+
+#swa=(datetime.datetime.strptime('1970'+' '+'5:06:54', "%Y%H:%M:%S"))
+

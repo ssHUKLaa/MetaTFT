@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.utils import timezone
 from .withriotapi import getPlayer, getProfilePicture, rankIcon
-from .reloadmatches import fillDb, playerStats, matchesfordisp, timedelta_str_to_posix
+from .reloadmatches import fillDb, playerStats, matchesfordisp, timedelta_str_to_posix, gametimefromDB
 from .models import searchPlayers, Matches, Champions, Traits
 from operator import itemgetter
 import time
@@ -41,6 +41,7 @@ def players_by_api(request, player):
         statsdict={'tier':playerbyid.tier,'LP':playerbyid.LP,'dateadded':playerbyid.add_date}
 
         matches=Matches.objects.filter(searchedPlayer=contestant.get('id'))
+        theplayer=(searchPlayers.objects.filter(id=contestant.get('id')))[0]
         for match in matches:
             participants=((match.otherParticipants).split(','))
             champlist=[]
@@ -63,7 +64,7 @@ def players_by_api(request, player):
 
             matchdict= {'placement':match.placement, 
                         'otherparticipants':participants,
-                        'game_time':match.game_time,
+                        'game_time':gametimefromDB(match.game_time, theplayer.add_date),
                         'game_length':match.game_length, 
                         'set_number':match.set_number,
                         'champions':champlist,

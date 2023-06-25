@@ -2,7 +2,7 @@ from .models import Matches, searchPlayers, Champions, Traits
 from django.utils import timezone
 from .withriotapi import searchPlayerStuff, getMatches, getMatch, nameByPUUID, loadstuff, getCost, getTraitIconURL, getItemIconURL
 from concurrent.futures import ThreadPoolExecutor
-import time
+import time, re
 
 def fillDb(player,matches):
     
@@ -164,3 +164,33 @@ def timedelta_str_to_posix(time_str):
     timedelta_obj = timezone.timedelta(days=days, hours=hours, minutes=minutes, seconds=seconds)
     posix_timestamp = (timezone.now()).timestamp() + timedelta_obj.total_seconds()
     return posix_timestamp
+
+def gametimefromDB(timedelta, dbdatetime):
+    initial_datetime = dbdatetime
+
+    # Time delta
+    time_delta_str = timedelta
+
+    # Parse time delta components
+    days, hours, minutes, seconds = 0, 0, 0, 0
+    pattern = r"(\d+)\s*day[s]*,\s*(\d+):(\d+):(\d+)"
+    match = re.match(pattern, time_delta_str)
+    if match:
+        days, hours, minutes, seconds = map(int, match.groups())
+
+    # Create timedelta object
+    time_delta = timezone.timedelta(days=days, hours=hours, minutes=minutes, seconds=seconds)
+
+    # Subtract timedelta from datetime
+    result_datetime = initial_datetime - time_delta
+    timedeltanow = timezone.now()-result_datetime
+    
+    hours, remainder = divmod(timedeltanow.seconds, 3600)
+    minutes, seconds = divmod(remainder, 60)
+
+    if timedeltanow.days == 0:
+        time_delta_str = f"{hours:02}:{minutes:02}:{seconds:02}"
+    else:
+        time_delta_str = f"{timedeltanow.days} day, {hours:02}:{minutes:02}:{seconds:02}"
+
+    return time_delta_str
