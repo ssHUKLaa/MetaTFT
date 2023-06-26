@@ -1,7 +1,7 @@
 from riotwatcher import TftWatcher, LolWatcher
 from decouple import config
-import requests
-import ujson
+import requests, time
+import ujson, datetime, pytz, re
 apikey=config('apikey', cast=str)
 watcher= TftWatcher(apikey)
 lolwatcher= LolWatcher(apikey)
@@ -63,11 +63,14 @@ def rankIcon(rank):
     return (f'https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-shared-components/global/default/{tiername}.png')
 
 def getMatches(player):
+    
     matches=watcher.match.by_puuid(my_region,player.get('puuid'),10)
+    
     return matches
 
 def getMatch(matches, index):
     match=watcher.match.by_id(my_region,matches[index])
+    
     return match 
 
 def matchParticipants(match):
@@ -81,8 +84,10 @@ def matchVersion(match):
     return match.get('game_version')
 
 def loadstuff():
+    
     getstuff = (requests.get('https://raw.communitydragon.org/latest/cdragon/tft/en_us.json')).text
     setdict = ujson.loads(getstuff)
+    
     return setdict
     
 def getCost(name, setnumber, setdict):
@@ -100,15 +105,32 @@ def getTraitIconURL(name,setnumber, setdict):
             return f'https://raw.communitydragon.org/latest/game/assets/ux/traiticons{nameformat}.png'
         
 def getItemIconURL(name, setdict):
+    start=time.time()
+    if name=="":
+        return ""
+    for stuff in (setdict.get('items')):
+        if (stuff.get('apiName')==name):
+            url=stuff.get('icon').lower()[:-4]
+            print(time.time()-start)
+            return f'https://raw.communitydragon.org/latest/game/{url}.png'
+        
+def getAugmentIconURL(name, setdict):
+    if name=="":
+        return ""
     for stuff in (setdict.get('items')):
         if (stuff.get('apiName')==name):
             url=stuff.get('icon').lower()[:-4]
             return f'https://raw.communitydragon.org/latest/game/{url}.png'
-        
 
-   
+def getChampIconURL(name, setnumber, setdict):
+    hold = ((setdict.get('sets')).get(str(setnumber)))
+    for champ in hold.get('champions'):
+        if (name==(champ.get('apiName'))):
+            nameformat=champ.get('icon').lower()[:-4]
+            return f'https://raw.communitydragon.org/latest/game/{nameformat}.png'
+
 #print(searchPlayerStuff((getPlayer('prestivent').get('id'))))
-#swa=(((getMatch(getMatches(getPlayer('prestivent')),0)).get('info').get('participants')[0].get('traits')))
+#swa=(((getMatch(getMatches(getPlayer('prestivent')),0)).get('metadata')))
 #print(swa)
 #print((getPlayer('prestivent')).get('id'))
 #print(getPlayer('prestivent'))
@@ -121,3 +143,4 @@ def getItemIconURL(name, setdict):
 
 #swa=(datetime.datetime.strptime('1970'+' '+'5:06:54', "%Y%H:%M:%S"))
 
+#print(datetime.datetime.now(tz=pytz.UTC))

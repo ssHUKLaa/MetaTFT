@@ -116,6 +116,10 @@
                     .traitimg {
                         filter: invert(1);
                     }
+                .augmentimg {
+                    width: 40px;
+                    height: 40px;
+                }
 
                 .unitcontainer {
                     display: inline-block;
@@ -185,7 +189,10 @@
                         object-position: 100% 20%;
                         border: 2px solid #d39f03;
                     }
-                
+                .itemhold {
+                    height: 100%;
+                    min-height: 13px;
+                    }
                     .item {
                         display: inline;
                         width: 13px;

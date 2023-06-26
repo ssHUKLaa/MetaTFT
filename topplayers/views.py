@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.utils import timezone
 from .withriotapi import getPlayer, getProfilePicture, rankIcon
-from .reloadmatches import fillDb, playerStats, matchesfordisp, timedelta_str_to_posix, gametimefromDB
+from .reloadmatches import fillDb, playerStats, matchesfordisp, timedelta_str_to_posix, gametimefromDB, testart,tesend
 from .models import searchPlayers, Matches, Champions, Traits
 from operator import itemgetter
 import time
@@ -20,6 +20,7 @@ def players_by_api(request, player):
     refreshed = False
     if request.method == 'POST':
         if 'Refresh' in request.POST:
+            
             playerstats=playerStats(contestant)
             initdispmatches= matchesfordisp(contestant)
             refreshed = True
@@ -48,9 +49,12 @@ def players_by_api(request, player):
             traitlist=[]
             for champion in Champions.objects.filter(associatedMatch=match.id):
                 Items=((champion.Items).split(','))
+                Item_Icon=((champion.Item_icon).split(','))
                 champinfo={'dispindex':(champion.id)[len(champion.id)-1],
                            'Items':Items,
+                           'Item_icon':Item_Icon,
                            'Name':((champion.Name).lower()),
+                           'Champ_icon': champion.Champ_icon,
                            'Star':champion.Star, 
                            'Rarity':champion.Rarity
                            }
@@ -61,12 +65,15 @@ def players_by_api(request, player):
                            'style': trait.style,
                            'imageIcon':trait.imageIcon}
                 traitlist.append(traitinfo)
-
+            augments=((match.augments).split(','))
+            augments_icon=((match.augments_icon).split(','))
             matchdict= {'placement':match.placement, 
                         'otherparticipants':participants,
                         'game_time':gametimefromDB(match.game_time, theplayer.add_date),
                         'game_length':match.game_length, 
                         'set_number':match.set_number,
+                        'augments':augments,
+                        'augments_icon':augments_icon,
                         'champions':champlist,
                         'traits':traitlist
                         }

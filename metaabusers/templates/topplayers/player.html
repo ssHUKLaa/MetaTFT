@@ -51,6 +51,13 @@
                             </div>
                         {% endfor %}
                     </div>
+                    <div class="augments">
+                        {% for augment in match.augments_icon %}
+                            {% if augment != "" %}
+                                <img class="augmentimg" src={{augment}}>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
                     <div class="units">
                         {% for unit in match.champions %}
                             <div class="unitcontainer">
@@ -61,13 +68,13 @@
                                                 <img class="star1" src="https://raw.communitydragon.org/latest/game/assets/ux/tft/notificationicons/goldstar.png" alt="https://raw.communitydragon.org/latest/game/assets/ux/tft/notificationicons/goldstar.png">
                                             {% endfor %}
                                         </div>
-                                        <img class ="unitimg1" src="https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}.png"  onerror="this.onerror=null; this.src='https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png'" alt="https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png">
+                                        <img class ="unitimg1" src="{{unit.Champ_icon}}"  onerror="this.onerror=null; this.src='https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png'" alt="https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png">
                                         <div class="itemhold">
-                                            {% for item in unit.Items %}
+                                            {% for item in unit.Item_icon %}
                                                 {% if item != "" %}
                                                     <img class="item" src={{item}}>
                                                 {% else %}
-                                                    <img class="emptyitem" src="">
+                                                    <img class="emptyitem" src="na">
                                                 {% endif %}
                                             {% endfor %}
                                         </div>
@@ -78,13 +85,13 @@
                                                 <img class="star2" src="https://raw.communitydragon.org/latest/game/assets/ux/tft/notificationicons/goldstar.png" alt="https://raw.communitydragon.org/latest/game/assets/ux/tft/notificationicons/goldstar.png">
                                             {% endfor %}
                                         </div>
-                                        <img class ="unitimg2" src="https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}.png"  onerror="this.onerror=null; this.src='https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png'" alt="https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png">
+                                        <img class ="unitimg2" src="{{unit.Champ_icon}}"  onerror="this.onerror=null; this.src='https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png'" alt="https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png">
                                         <div class="itemhold">
-                                            {% for item in unit.Items %}
+                                            {% for item in unit.Item_icon %}
                                                 {% if item != "" %}
                                                     <img class="item" src={{item}}>
                                                 {% else %}
-                                                    <img class="emptyitem" src="">
+                                                    <img class="emptyitem" src="na">
                                                 {% endif %}
                                             {% endfor %}
                                         </div>
@@ -94,13 +101,13 @@
                                                 <img class="star3" src="https://raw.communitydragon.org/latest/game/assets/ux/tft/notificationicons/goldstar.png" alt="https://raw.communitydragon.org/latest/game/assets/ux/tft/notificationicons/goldstar.png">
                                             {% endfor %}
                                         </div>  
-                                        <img class ="unitimg3" src="https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}.png"  onerror="this.onerror=null; this.src='https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png'" alt="https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png">
+                                        <img class ="unitimg3" src="{{unit.Champ_icon}}"  onerror="this.onerror=null; this.src='https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png'" alt="https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png">
                                         <div class="itemhold">
-                                            {% for item in unit.Items %}
+                                            {% for item in unit.Item_icon %}
                                                 {% if item != "" %}
                                                     <img class="item" src={{item}}>
                                                 {% else %}
-                                                    <img class="emptyitem" src="">
+                                                    <img class="emptyitem" src="na">
                                                 {% endif %}
                                             {% endfor %}
                                         </div>
@@ -110,13 +117,13 @@
                                                 <img class="star4" src="https://raw.communitydragon.org/latest/game/assets/ux/tft/notificationicons/goldstar.png" alt="https://raw.communitydragon.org/latest/game/assets/ux/tft/notificationicons/goldstar.png">
                                             {% endfor %}
                                         </div>
-                                        <img class ="unitimg4" src="https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}.png"  onerror="this.onerror=null; this.src='https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png'" alt="https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png">
+                                        <img class ="unitimg4" src="{{unit.Champ_icon}}"  onerror="this.onerror=null; this.src='https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png'" alt="https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png">
                                         <div class="itemhold">
-                                            {% for item in unit.Items %}
+                                            {% for item in unit.Item_icon %}
                                                 {% if item != "" %}
                                                     <img class="item" src={{item}}>
                                                 {% else %}
-                                                    <img class="emptyitem" src="">
+                                                    <img class="emptyitem" src="na">
                                                 {% endif %}
                                             {% endfor %}
                                         </div>
@@ -126,14 +133,14 @@
                                                 <img class="star5" src="https://raw.communitydragon.org/latest/game/assets/ux/tft/notificationicons/goldstar.png" alt="https://raw.communitydragon.org/latest/game/assets/ux/tft/notificationicons/goldstar.png">
                                             {% endfor %}
                                         </div>
-                                        <img class ="unitimg5" src="https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}.png"  onerror="this.onerror=null; this.src='https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png'" alt="https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png">
+                                        <img class ="unitimg5" src="{{unit.Champ_icon}}"  onerror="this.onerror=null; this.src='https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png'" alt="https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png">
                                         
                                         <div class="itemhold">
-                                            {% for item in unit.Items %}
+                                            {% for item in unit.Item_icon %}
                                                 {% if item != "" %}
                                                     <img class="item" src={{item}}>
                                                 {% else %}
-                                                    <img class="emptyitem" src="">
+                                                    <img class="emptyitem" src="na">
                                                 {% endif %}
                                             {% endfor %}
                                         </div>
@@ -143,13 +150,13 @@
                                                 <img class="star5" src="https://raw.communitydragon.org/latest/game/assets/ux/tft/notificationicons/goldstar.png" alt="https://raw.communitydragon.org/latest/game/assets/ux/tft/notificationicons/goldstar.png">
                                             {% endfor %}
                                         </div>
-                                        <img class ="unitimg5" src="https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}.png"  onerror="this.onerror=null; this.src='https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png'" alt="https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png">
+                                        <img class ="unitimg5" src="{{unit.Champ_icon}}"  onerror="this.onerror=null; this.src='https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png'" alt="https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/{{unit.Name}}.tft_set{{match.set_number}}_stage2.png">
                                         <div class="itemhold">
-                                            {% for item in unit.Items %}
+                                            {% for item in unit.Item_icon %}
                                                 {% if item != "" %}
                                                     <img class="item" src={{item}}>
                                                 {% else %}
-                                                    <img class="emptyitem" src="">
+                                                    <img class="emptyitem" src="na">
                                                 {% endif %}
                                             {% endfor %}
                                         </div>

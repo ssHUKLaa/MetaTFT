@@ -1,6 +1,6 @@
 from .models import Matches, searchPlayers, Champions, Traits
 from django.utils import timezone
-from .withriotapi import searchPlayerStuff, getMatches, getMatch, nameByPUUID, loadstuff, getCost, getTraitIconURL, getItemIconURL
+from .withriotapi import searchPlayerStuff, getMatches, getMatch, nameByPUUID, loadstuff, getCost, getTraitIconURL, getItemIconURL, getAugmentIconURL, getChampIconURL
 from concurrent.futures import ThreadPoolExecutor
 import time, re
 
@@ -54,6 +54,8 @@ def fillDb(player,matches):
         swag.game_length = eachmatch.get('game_length')
         swag.game_time = eachmatch.get('game_time')
         swag.set_number = eachmatch.get('set_number')
+        swag.augments = ','.join(eachmatch.get('augments'))
+        swag.augments_icon = ','.join(eachmatch.get('augments_icon'))
         swag.searchedPlayer = b
         swag.save()
 
@@ -76,8 +78,10 @@ def fillDb(player,matches):
             loll = Champions()
             loll.id = eachmatch.get('id')+(','+str(incchamps))
             loll.Name = unit.get('Name')
+            loll.Champ_icon = unit.get('Champ_icon')
             loll.Star = unit.get('Star')
             loll.Items = ','.join(unit.get('Items'))
+            loll.Item_icon = ','.join(unit.get('Item_icon'))
             loll.Rarity = unit.get('Rarity')
             loll.associatedMatch = swag
             loll.save()
@@ -126,10 +130,11 @@ def matchesfordisp(player):
         champs=[]
 
         for unit in unitlist:
-    
             champdict={'Name':(unit.get('character_id')).lower(),
+                       'Champ_icon':getChampIconURL((unit.get('character_id')),(tes.get('info').get('tft_set_number')),stuff),
                        'Star':unit.get('tier'),
-                       'Items':[getItemIconURL(name, stuff) for name in (unit.get('itemNames'))],
+                       'Items':unit.get('itemNames'),
+                       'Item_icon':[getItemIconURL(name, stuff) for name in (unit.get('itemNames'))],
                        'Rarity':getCost(unit.get('character_id'),(tes.get('info').get('tft_set_number')), stuff)}
             champs.append(champdict)
 
@@ -139,6 +144,8 @@ def matchesfordisp(player):
                    'game_time':((str(timezone.now()-(timezone.datetime.fromtimestamp((((tes.get('info')).get('game_datetime'))/1000), tz=(timezone.get_current_timezone()))))).split('.'))[0],
                    'game_length':time.strftime("%M:%S",time.gmtime(float(((lamo[inc2]).get('time_eliminated'))))), 
                    'set_number': (tes.get('info').get('tft_set_number')),
+                   'augments':(lamo[inc2]).get('augments'),
+                   'augments_icon':[getAugmentIconURL(name, stuff) for name in (lamo[inc2]).get('augments')], 
                    'traits':traits,
                    'champions':champs
                    }
@@ -173,10 +180,14 @@ def gametimefromDB(timedelta, dbdatetime):
 
     # Parse time delta components
     days, hours, minutes, seconds = 0, 0, 0, 0
-    pattern = r"(\d+)\s*day[s]*,\s*(\d+):(\d+):(\d+)"
-    match = re.match(pattern, time_delta_str)
-    if match:
-        days, hours, minutes, seconds = map(int, match.groups())
+    pattern1 = r"(\d+):(\d+):(\d+)"
+    pattern2 = r"(\d+)\s*day[s]*,\s*(\d+):(\d+):(\d+)"
+    match1 = re.match(pattern1, time_delta_str)
+    match2 = re.match(pattern2, time_delta_str)
+    if match1:
+        hours, minutes, seconds = map(int, match1.groups())
+    elif match2:
+        days, hours, minutes, seconds = map(int, match2.groups())
 
     # Create timedelta object
     time_delta = timezone.timedelta(days=days, hours=hours, minutes=minutes, seconds=seconds)
@@ -193,4 +204,10 @@ def gametimefromDB(timedelta, dbdatetime):
     else:
         time_delta_str = f"{timedeltanow.days} day, {hours:02}:{minutes:02}:{seconds:02}"
 
-    return time_delta_str
+    return (time_delta_str)
+
+def testart():
+    return time.time()
+
+def tesend(start):
+    print(time.time()-start)
