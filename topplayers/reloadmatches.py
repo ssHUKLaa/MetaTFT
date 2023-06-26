@@ -130,8 +130,9 @@ def matchesfordisp(player):
         champs=[]
 
         for unit in unitlist:
-            champdict={'Name':(unit.get('character_id')).lower(),
-                       'Champ_icon':getChampIconURL((unit.get('character_id')),(tes.get('info').get('tft_set_number')),stuff),
+            Name=(unit.get('character_id'))
+            champdict={'Name':Name.lower(),
+                       'Champ_icon':getChampIconURL(Name,(tes.get('info').get('tft_set_number')),stuff),
                        'Star':unit.get('tier'),
                        'Items':unit.get('itemNames'),
                        'Item_icon':[getItemIconURL(name, stuff) for name in (unit.get('itemNames'))],

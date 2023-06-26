@@ -8,7 +8,7 @@
     </div>
     <meta charset="UTF-8">
     <title>{{player}}</title>
-    <link rel="stylesheet" href="../../../static/css/player.css">
+    <link rel="stylesheet" href="{% static "css/player.css" %}">
 </head>
 <body>
     <div class="header">
@@ -46,9 +46,20 @@
                     </div>
                     <div class="traits">
                         {% for trait in match.traits %}
-                            <div class="traitcontainer">
-                                <img class="traitimg" src={{trait.imageIcon}}>
-                            </div>
+                            {% if trait.tier != 0 %}
+                                <div class="traitcontainer">
+                                    {% if trait.style == 1 %}
+                                        <img class="traitstyle" src="{% static "images/traitstyle_bronze.png" %}" alt="bronze">
+                                    {% elif trait.style == 2 %}
+                                        <img class="traitstyle" src="{% static "images/traitstyle_silver.png" %}" alt="silver">
+                                    {% elif trait.style == 3 %}
+                                        <img class="traitstyle" src="{% static "images/traitstyle_gold.png" %}" alt="gold">
+                                    {% else %}
+                                        <img class="traitstyle" src="{% static "images/traitstyle_prismatic.png" %}" alt="prismatic">
+                                    {% endif %}
+                                    <img class="traitimg" src={{trait.imageIcon}}>
+                                </div>
+                            {% endif %}
                         {% endfor %}
                     </div>
                     <div class="augments">

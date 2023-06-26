@@ -123,11 +123,12 @@ def getAugmentIconURL(name, setdict):
             return f'https://raw.communitydragon.org/latest/game/{url}.png'
 
 def getChampIconURL(name, setnumber, setdict):
-    hold = ((setdict.get('sets')).get(str(setnumber)))
-    for champ in hold.get('champions'):
-        if (name==(champ.get('apiName'))):
-            nameformat=champ.get('icon').lower()[:-4]
-            return f'https://raw.communitydragon.org/latest/game/{nameformat}.png'
+    for sets in (setdict.get('setData')):
+        if (setnumber==sets.get('number')):
+             for stuff in (sets.get('champions')):
+                if (name==stuff.get('apiName')):
+                    nameformat=stuff.get('icon').lower()[:-4]
+                    return f'https://raw.communitydragon.org/latest/game/{nameformat}.png'
 
 #print(searchPlayerStuff((getPlayer('prestivent').get('id'))))
 #swa=(((getMatch(getMatches(getPlayer('prestivent')),0)).get('metadata')))
