@@ -145,3 +145,4 @@ def getChampIconURL(name, setnumber, setdict):
 #swa=(datetime.datetime.strptime('1970'+' '+'5:06:54', "%Y%H:%M:%S"))
 
 #print(datetime.datetime.now(tz=pytz.UTC))
+print(list(getChallengerPlayers().values()))

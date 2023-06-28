@@ -1,6 +1,7 @@
 from .models import Matches, searchPlayers, Champions, Traits
 from django.utils import timezone
 from .withriotapi import searchPlayerStuff, getMatches, getMatch, nameByPUUID, loadstuff, getCost, getTraitIconURL, getItemIconURL, getAugmentIconURL, getChampIconURL
+from .comparetoagg import comparematchtoagg
 from concurrent.futures import ThreadPoolExecutor
 import time, re
 
@@ -105,6 +106,7 @@ def matchesfordisp(player):
     allMatches=getMatches(player)
     matchlist=[]
     stuff=loadstuff()
+    comparematchtoagg() 
 
     def process_match(inc):
         tes = getMatch(allMatches,inc)
@@ -123,12 +125,16 @@ def matchesfordisp(player):
         traitlist=lamo[inc2].get('traits')
         traits=[]
         for trait in traitlist:
-            traitdict={'Name':(trait.get('name'))[5:].lower(),'tier':trait.get('tier_current'),'style':trait.get('style'),'imageIcon':getTraitIconURL(trait.get('name'),(tes.get('info').get('tft_set_number')),stuff)}
+            traitdict={'Name':(trait.get('name'))[5:].lower(),
+                       'tier':trait.get('tier_current'),
+                       'style':trait.get('style'),
+                       'imageIcon':getTraitIconURL(trait.get('name'),(tes.get('info').get('tft_set_number')),stuff)
+                       }
             traits.append(traitdict)
-        
+        traits=sorted(trait, key= lambda d: d['style'])
+
         unitlist = lamo[inc2].get('units')
         champs=[]
-
         for unit in unitlist:
             Name=(unit.get('character_id'))
             champdict={'Name':Name.lower(),
@@ -148,7 +154,8 @@ def matchesfordisp(player):
                    'augments':(lamo[inc2]).get('augments'),
                    'augments_icon':[getAugmentIconURL(name, stuff) for name in (lamo[inc2]).get('augments')], 
                    'traits':traits,
-                   'champions':champs
+                   'champions':champs,
+                   'comparison_score': 
                    }
         return matchdict
     
