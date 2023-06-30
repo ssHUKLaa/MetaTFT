@@ -3,7 +3,7 @@ from decouple import config
 import requests, time
 import ujson, datetime, pytz, re
 apikey=config('apikey', cast=str)
-watcher= TftWatcher(apikey)
+watcher= TftWatcher(apikey,30)
 lolwatcher= LolWatcher(apikey)
 my_region = 'na1'
 version=lolwatcher.data_dragon.versions_for_region(my_region)
@@ -11,6 +11,30 @@ version=lolwatcher.data_dragon.versions_for_region(my_region)
 def getChallengerPlayers():
     
     tes = watcher.league.challenger(my_region)
+    entries = tes.get('entries')
+    summonerRank = {}
+    holder=0
+    while holder < (len(entries)):
+        # lp : ( summonerID : name)
+        summonerRank.update({list(entries[holder].values())[2] : ({list(entries[holder].values())[0] : list(entries[holder].values())[1]})}) 
+        holder+=1
+    return ((dict(reversed(sorted(summonerRank.items())))))
+
+def getGrandMasterPlayers():
+    
+    tes = watcher.league.grandmaster(my_region)
+    entries = tes.get('entries')
+    summonerRank = {}
+    holder=0
+    while holder < (len(entries)):
+        # lp : ( summonerID : name)
+        summonerRank.update({list(entries[holder].values())[2] : ({list(entries[holder].values())[0] : list(entries[holder].values())[1]})}) 
+        holder+=1
+    return ((dict(reversed(sorted(summonerRank.items())))))
+
+def getMasterPlayers():
+    
+    tes = watcher.league.master(my_region)
     entries = tes.get('entries')
     summonerRank = {}
     holder=0
@@ -145,4 +169,4 @@ def getChampIconURL(name, setnumber, setdict):
 #swa=(datetime.datetime.strptime('1970'+' '+'5:06:54', "%Y%H:%M:%S"))
 
 #print(datetime.datetime.now(tz=pytz.UTC))
-print(list(getChallengerPlayers().values()))
+#print(list(getChallengerPlayers().values()))

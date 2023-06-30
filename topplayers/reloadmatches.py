@@ -1,7 +1,6 @@
 from .models import Matches, searchPlayers, Champions, Traits
 from django.utils import timezone
 from .withriotapi import searchPlayerStuff, getMatches, getMatch, nameByPUUID, loadstuff, getCost, getTraitIconURL, getItemIconURL, getAugmentIconURL, getChampIconURL
-from .comparetoagg import comparematchtoagg
 from concurrent.futures import ThreadPoolExecutor
 import time, re
 
@@ -106,7 +105,6 @@ def matchesfordisp(player):
     allMatches=getMatches(player)
     matchlist=[]
     stuff=loadstuff()
-    comparematchtoagg() 
 
     def process_match(inc):
         tes = getMatch(allMatches,inc)
@@ -154,8 +152,7 @@ def matchesfordisp(player):
                    'augments':(lamo[inc2]).get('augments'),
                    'augments_icon':[getAugmentIconURL(name, stuff) for name in (lamo[inc2]).get('augments')], 
                    'traits':traits,
-                   'champions':champs,
-                   'comparison_score': 
+                   'champions':champs
                    }
         return matchdict
     

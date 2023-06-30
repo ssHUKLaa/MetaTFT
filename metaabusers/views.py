@@ -32,8 +32,10 @@ def topplayers(request):
             t = threading.Thread(target=threaded_operation, daemon=True)
             t.start()
             t.join()
-
-    refreshed=rebestplayer.getPlayers().objects.first().add_date
+    if rebestplayer.getPlayers().objects.count()>0:
+        refreshed=rebestplayer.getPlayers().objects.first().add_date
+    else: 
+        return render(request, 'bestplayers.html')
 
     BestPlayers = list(rebestplayer.getPlayers().objects.values_list('autoinc', 'name', 'LP'))
     representedlist = []
