@@ -125,11 +125,11 @@ def matchesfordisp(player):
         for trait in traitlist:
             traitdict={'Name':(trait.get('name'))[5:].lower(),
                        'tier':trait.get('tier_current'),
-                       'style':trait.get('style'),
+                       'style':int(trait.get('style')),
                        'imageIcon':getTraitIconURL(trait.get('name'),(tes.get('info').get('tft_set_number')),stuff)
                        }
             traits.append(traitdict)
-        traits=sorted(trait, key= lambda d: d['style'])
+        traits=sorted(traits, key= lambda d: d['style'])
 
         unitlist = lamo[inc2].get('units')
         champs=[]
