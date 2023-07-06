@@ -4,6 +4,7 @@ from django.utils import timezone
 from django.shortcuts import redirect
 from . import rebestplayer
 from topplayers.reloadmatches import deleveryweek
+from .loadaggdata import loadaggdata
 import threading
 
 
@@ -15,6 +16,7 @@ def index(request):
     
     removedb=threading.Thread(target=deleveryweek)
     removedb.start()
+    
     return render(request, 'index.html')
 
 def topplayers(request):
