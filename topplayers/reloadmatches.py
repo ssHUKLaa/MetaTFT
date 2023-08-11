@@ -2,6 +2,7 @@ from .models import Matches, searchPlayers, Champions, Traits
 from django.utils import timezone
 from .withriotapi import searchPlayerStuff, getMatches, getMatch, nameByPUUID, loadstuff, getCost, getTraitIconURL, getItemIconURL, getAugmentIconURL, getChampIconURL
 from concurrent.futures import ThreadPoolExecutor
+from .getagg import compareMatchToAgg, loadAggData
 import time, re
 
 def fillDb(player,matches):
@@ -142,7 +143,8 @@ def matchesfordisp(player):
                        'Item_icon':[getItemIconURL(name, stuff) for name in (unit.get('itemNames'))],
                        'Rarity':getCost(unit.get('character_id'),(tes.get('info').get('tft_set_number')), stuff)}
             champs.append(champdict)
-
+        
+        aggtocompare = loadAggData()
         matchdict={'id':allMatches[inc],
                    'otherparticipants':plnames,
                    'placement':(lamo[inc2]).get('placement'),
@@ -152,7 +154,8 @@ def matchesfordisp(player):
                    'augments':(lamo[inc2]).get('augments'),
                    'augments_icon':[getAugmentIconURL(name, stuff) for name in (lamo[inc2]).get('augments')], 
                    'traits':traits,
-                   'champions':champs
+                   'champions':champs,
+                   'compPercent': compareMatchToAgg(aggtocompare, champs)
                    }
         return matchdict
     

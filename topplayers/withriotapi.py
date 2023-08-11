@@ -170,3 +170,5 @@ def getChampIconURL(name, setnumber, setdict):
 
 #print(datetime.datetime.now(tz=pytz.UTC))
 #print(list(getChallengerPlayers().values()))
+str="swag"
+print(str[:2])
