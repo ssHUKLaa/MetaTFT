@@ -155,7 +155,7 @@ def matchesfordisp(player):
                    'augments_icon':[getAugmentIconURL(name, stuff) for name in (lamo[inc2]).get('augments')], 
                    'traits':traits,
                    'champions':champs,
-                   'compPercent': compareMatchToAgg(aggtocompare, champs)
+                   'compPercent': compareMatchToAgg(aggtocompare, champs,(lamo[inc2]).get('augments'))
                    }
         return matchdict
     

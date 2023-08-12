@@ -1,5 +1,6 @@
 from metaabusers.models import AggregateData
 from random import choice
+import statistics
 
 def loadAggData():
     x=0
@@ -14,9 +15,30 @@ def loadAggData():
         x+=1
     return agglist
 
-def compareMatchToAgg(aggdata, champs):
-    percentsimilar=0
+def compareMatchToAgg(aggdata, champs, augments):
+    percentsimilar=[]
     for champion in champs:
         for aggmatch in aggdata:
-                for aggunit in aggmatch:
-                     if 
+            matchsimilar=[]
+            for aggunit in aggmatch:
+                unitsimilar=0
+                if (champion.get('Name')==aggunit.get('Name')):
+                    unitsimilar+=0.85
+                    for aggunititem in ((aggunit.get('Items')).split(',')):
+                        for champitem in champion.get('Items'):
+                            if (champitem==aggunititem):
+                                unitsimilar+=0.05
+                else:
+                    for aggunititem in ((aggunit.get('Items')).split(',')):
+                        for champitem in champion.get('Items'):
+                            if (champitem==aggunititem):
+                                unitsimilar+=0.10
+                matchsimilar.append(unitsimilar)
+            totalmatchsim=(statistics.mean(matchsimilar))
+            if totalmatchsim<0.70:
+                for aggmatchaugment in (((aggmatch[0]).get('Augments')).split(',')):
+                    for matchaug in augments:
+                        if matchaug==aggmatchaugment:
+                            totalmatchsim+=0.05
+            percentsimilar.append(totalmatchsim)
+    return (statistics.mean(percentsimilar)*100)
