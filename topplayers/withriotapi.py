@@ -1,10 +1,11 @@
-from riotwatcher import TftWatcher, LolWatcher
+from riotwatcher import RiotWatcher, TftWatcher, LolWatcher
 from decouple import config
 import requests, time
 import ujson, datetime, pytz, re
 apikey=config('apikey', cast=str)
 watcher= TftWatcher(apikey,30)
 lolwatcher= LolWatcher(apikey)
+riotwatcher = RiotWatcher(apikey)
 my_region = 'na1'
 version=lolwatcher.data_dragon.versions_for_region(my_region)
 
@@ -45,13 +46,13 @@ def getMasterPlayers():
     return ((dict(reversed(sorted(summonerRank.items())))))
 
 def getPlayer(summonerName):
-    try:
-        player= watcher.summoner.by_name(my_region, summonerName)
-    except:
-        return False
-    else:
-        return player
+    name, tag = extract_game_info(summonerName)
 
+    player= riotwatcher.account.by_riot_id("Americas",name,tag)
+    puuid=player.get("puuid")
+    tftstuff=playerByPUUID(puuid)
+    return tftstuff
+  
 def playerByPUUID(puuid):
     try:
         player= watcher.summoner.by_puuid(my_region, puuid)
@@ -71,6 +72,7 @@ def searchPlayerStuff(id):
 def nameByPUUID(puuid):
     try:
         name = (watcher.summoner.by_puuid(my_region,puuid)).get('name')
+        
     except:
         return False
     else:
@@ -128,6 +130,13 @@ def getTraitIconURL(name,setnumber, setdict):
             nameformat=(((trait.get('icon'))[(trait.get('icon')).rindex('/'):])[:-4]).lower()
             return f'https://raw.communitydragon.org/latest/game/assets/ux/traiticons{nameformat}.png'
         
+def extract_game_info(string):
+    separator_index = string.find('#')
+
+    game_name = string[:separator_index].strip()
+    tagline = string[separator_index + 1:].strip()
+
+    return game_name, tagline    
 def getItemIconURL(name, setdict):
     start=time.time()
     if name=="":
@@ -169,6 +178,4 @@ def getChampIconURL(name, setnumber, setdict):
 #swa=(datetime.datetime.strptime('1970'+' '+'5:06:54', "%Y%H:%M:%S"))
 
 #print(datetime.datetime.now(tz=pytz.UTC))
-#print(list(getChallengerPlayers().values()))
-str="swag"
-print(str[:2])
+print(getPlayer("DestroyernV#KNOX"))

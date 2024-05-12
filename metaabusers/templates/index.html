@@ -11,7 +11,7 @@
   <h1>test</h1>
   <form action={% url 'index'%} method="POST">
     {% csrf_token %}
-    <p><input type="text" name="inp_number" placeholder="summoner name"/></p>
+    <p><input type="text" name="inp_number" placeholder="PLAYER#TAG"/></p>
     <p><input type="submit" value="Submit"/></p>            
   </form>
 </body>
